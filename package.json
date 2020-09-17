@@ -68,8 +68,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "storybook:build": "build-storybook -s public",
     "test": "react-scripts test --modulePaths=src",
-    "test:coverage": "yarn test --coverage --watchAll=false --bail",
-    "coverage:report": "./node_modules/.bin/codecov -f coverage/coverage-final.json"
+    "test:coverage": "yarn test --coverage --watchAll=false --bail"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
@@ -88,7 +87,15 @@
       "!src/components/**/index.(js|jsx|ts|tsx)",
       "!src/containers/**/index.(js|jsx|ts|tsx)",
       "src/**/*.(js|jsx|ts|tsx)"
-    ]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    }
   },
   "eslintConfig": {
     "extends": "react-app"

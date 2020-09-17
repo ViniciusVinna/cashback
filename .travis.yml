@@ -1,3 +1,4 @@
+sudo: false
 language: node_js
 node_js:
   - 10
@@ -6,4 +7,6 @@ cache:
     - node_modules
 script:
   - npm run build
-  - npm test
+  - npm run test:coverage
+after_success:
+  bash <(curl -s https://codecov.io/bash)
