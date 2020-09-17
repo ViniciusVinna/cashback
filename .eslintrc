@@ -1,0 +1,177 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+	"airbnb",
+	"plugin:react/recommended",
+	"plugin:testing-library/react",
+	"prettier"
+  ],
+  "env": {
+	"browser": true,
+	"jest": true
+  },
+  "plugins": [
+	"babel",
+	"emotion",
+	"prettier",
+	"react-hooks",
+	"testing-library"
+  ],
+  "globals": {
+	"act": true,
+	"fireEvent": true,
+	"jsdom": false,
+	"render": true,
+	"renderHook": true,
+	"renderWithRedux": true,
+	"sagaReducer": true,
+	"setupRender": true,
+	"skipEventLoop": true,
+	"wait": true,
+	"waitFor": true
+  },
+  "settings": {
+	"import/resolver": {
+	  "node": {
+		"paths": ["src"],
+		"extensions": [".js", ".jsx"]
+	  }
+	}
+  },
+  "rules": {
+	"arrow-body-style": ["warn", "as-needed"],
+	"arrow-parens": "off",
+	"block-spacing": "warn",
+	"brace-style": [1, "stroustrup", { "allowSingleLine": true }],
+	"camelcase": "off",
+	"comma-dangle": [
+	  "warn", {
+		"arrays": "always-multiline",
+		"functions": "only-multiline",
+		"imports": "always-multiline",
+		"objects": "always-multiline"
+	  }
+	],
+	"dot-notation": "warn",
+	"function-paren-newline": ["off", { "minItems": 3 }],
+	"generator-star-spacing": "off",
+	"global-require": "off",
+	"indent": ["warn", 2, { "SwitchCase": 1 }],
+	"max-len": "off",
+	"newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 5 }],
+	"no-case-declarations": "warn",
+	"no-else-return": ["error", { "allowElseIf": true }],
+	"no-confusing-arrow": ["warn", { "allowParens": true }],
+	"no-mixed-spaces-and-tabs": ["warn", "smart-tabs"],
+	"no-multi-spaces": [
+	  "warn", {
+		"exceptions": {
+		  "VariableDeclarator": true,
+		  "Property": false
+		}
+	  }
+	],
+	"no-nested-ternary": "warn",
+	"no-param-reassign": ["warn", { "props": false }],
+	"no-restricted-syntax": [
+	  "error",
+	  "DebuggerStatement",
+	  "LabeledStatement",
+	  "WithStatement"
+	],
+	"no-return-assign": ["error", "except-parens"],
+	"no-template-curly-in-string": "warn",
+	"no-trailing-spaces": "warn",
+	"no-use-before-define": ["error", { "functions": false }],
+	"no-underscore-dangle": "off",
+	"no-unused-vars": "warn",
+	"no-tabs": 0,
+	"object-curly-newline": "off",
+	"object-shorthand": ["warn", "always"],
+	"one-var": "warn",
+	"padded-blocks": "warn",
+	"prefer-const": "warn",
+	"prefer-destructuring": "warn",
+	"prefer-template": "warn",
+	"prefer-promise-reject-errors": "off",
+	"quotes": ["warn", "single", "avoid-escape"],
+	"require-jsdoc": "off",
+	"semi": [2, "always"],
+	"space-before-function-paren": [
+	  "warn", {
+		"anonymous": "never",
+		"asyncArrow": "always",
+		"named": "never"
+	  }
+	],
+	"space-in-parens": "warn",
+	"spaced-comment": [
+	  "warn",
+	  "always", {
+		"exceptions": [
+		  "-+"
+		],
+		"markers": [
+		  "eslint-disable",
+		  "eslint-disable-line",
+		  "eslint-disable-next-line",
+		  "eslint-enable"
+		]
+	  }
+	],
+	"valid-jsdoc": [
+	  "warn", {
+		"prefer": {
+		  "return": "returns"
+		},
+		"requireParamDescription": false,
+		"requireReturn": false,
+		"requireReturnDescription": false
+	  }
+	],
+	"import/export": "off",
+	"import/no-dynamic-require": "warn",
+	"import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+	"import/no-named-as-default": "warn",
+	"import/no-unresolved": "warn",
+	"import/prefer-default-export": "off",
+	"jsx-a11y/anchor-has-content": "warn",
+	"jsx-a11y/anchor-is-valid": "warn",
+	"jsx-a11y/click-events-have-key-events": "warn",
+	"jsx-a11y/control-has-associated-label": "warn",
+	"jsx-a11y/label-has-associated-control": "warn",
+	"jsx-a11y/label-has-for": "warn",
+	"jsx-a11y/media-has-caption": "off",
+	"jsx-a11y/no-static-element-interactions": "off",
+	"jsx-quotes": "warn",
+	"react/forbid-prop-types": "warn",
+	"react/button-has-type": "warn",
+	"react/jsx-closing-bracket-location": ["warn", "line-aligned"],
+	"react/jsx-first-prop-new-line": ["warn", "multiline"],
+	"react/jsx-fragments": "off",
+	"react/jsx-indent": ["warn", 2],
+	"react/jsx-indent-props": ["warn", 2],
+	"react/jsx-key": "warn",
+	"react/jsx-max-props-per-line": ["warn", { "maximum": 4 }],
+	"react/jsx-props-no-spreading": "warn",
+	"react/jsx-no-target-blank": "off",
+	"react/no-array-index-key": "warn",
+	"react/no-danger": "warn",
+	"react/jsx-boolean-value": "off",
+	"react/jsx-curly-newline": "warn",
+	"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+	"react/jsx-no-duplicate-props": "warn",
+	"react/jsx-one-expression-per-line": "warn",
+	"react/jsx-pascal-case": "error",
+	"react/jsx-uses-react": "error",
+	"react/jsx-uses-vars": "error",
+	"react/no-unused-prop-types": "warn",
+	"react/no-unused-state": "warn",
+	"react/no-unescaped-entities": "on",
+	"react/prop-types": "warn",
+	"react/require-default-props": "off",
+	"react/sort-prop-types": "warn",
+	"react-hooks/rules-of-hooks": "error",
+	"react-hooks/exhaustive-deps": "warn"
+  }
+}
