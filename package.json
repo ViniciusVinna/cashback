@@ -30,13 +30,65 @@
     "tree-changes": "^0.5.1",
     "uuid": "^8.3.0"
   },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/addons": "^6.0.21",
+    "@storybook/react": "^6.0.21",
+    "babel-eslint": "^10.1.0",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-emotion": "^10.0.27",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-redux-saga": "^1.2.0",
+    "eslint-plugin-testing-library": "^3.8.0",
+    "husky": "^4.3.0",
+    "jest-chain": "^1.1.5",
+    "jest-emotion": "^10.0.32",
+    "jest-extended": "^0.11.5",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "redux-logger": "^3.0.6",
+    "redux-saga-test-plan": "^4.0.0-rc.3",
+    "stylelint-config-prettier": "^8.0.2"
+  },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint --ext .js --ext .jsx src",
+    "lint:fix": "yarn lint --fix",
+    "start": "react-scripts start",
     "storybook": "start-storybook -p 9009 -s public",
-    "storybook:build": "build-storybook -s public"
+    "storybook:build": "build-storybook -s public",
+    "test": "react-scripts test --modulePaths=src",
+    "test:coverage": "yarn test --coverage --watchAll=false --bail",
+    "coverage:report": "./node_modules/.bin/codecov -f coverage/coverage-final.json"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint . --fix",
+      "git add"
+    ]
+  },
+  "hooks": {
+    "post-merge": "yarn install",
+    "pre-commit": "lint-staged"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!/node_modules/",
+      "!src/config/*",
+      "!src/components/**/index.(js|jsx|ts|tsx)",
+      "!src/containers/**/index.(js|jsx|ts|tsx)",
+      "src/**/*.(js|jsx|ts|tsx)"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,29 +104,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^6.0.21",
-    "@storybook/addon-links": "^6.0.21",
-    "@storybook/addons": "^6.0.21",
-    "@storybook/react": "^6.0.21",
-    "esdoc": "^1.1.0",
-    "esdoc-standard-plugin": "^1.0.0",
-    "eslint": "^7.9.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.2",
-    "eslint-plugin-redux-saga": "^1.2.0",
-    "eslint-plugin-testing-library": "^3.8.0",
-    "husky": "^4.3.0",
-    "jest-chain": "^1.1.5",
-    "jest-emotion": "^10.0.32",
-    "jest-extended": "^0.11.5",
-    "prettier": "^2.1.2",
-    "redux-logger": "^3.0.6",
-    "redux-saga-test-plan": "^4.0.0-rc.3"
   }
 }
