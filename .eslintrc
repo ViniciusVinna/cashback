@@ -1,21 +1,20 @@
 {
   "parser": "babel-eslint",
   "extends": [
-	"airbnb",
-	"plugin:react/recommended",
-	"plugin:testing-library/react",
-	"prettier"
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:testing-library/react"
   ],
   "env": {
 	"browser": true,
 	"jest": true
   },
   "plugins": [
-	"babel",
-	"emotion",
-	"prettier",
-	"react-hooks",
-	"testing-library"
+    "babel",
+    "emotion",
+    "prettier",
+    "react-hooks",
+    "testing-library"
   ],
   "globals": {
 	"act": true,
@@ -167,7 +166,7 @@
 	"react/jsx-uses-vars": "error",
 	"react/no-unused-prop-types": "warn",
 	"react/no-unused-state": "warn",
-	"react/no-unescaped-entities": "on",
+	"react/no-unescaped-entities": "warn",
 	"react/prop-types": "warn",
 	"react/require-default-props": "off",
 	"react/sort-prop-types": "warn",
