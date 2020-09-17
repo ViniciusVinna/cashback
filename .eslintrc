@@ -51,7 +51,7 @@
 		"objects": "always-multiline"
 	  }
 	],
-	"dot-notation": "warn",
+	"dot-notation": "off",
 	"function-paren-newline": ["off", { "minItems": 3 }],
 	"generator-star-spacing": "off",
 	"global-require": "off",
