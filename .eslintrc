@@ -32,8 +32,8 @@
   "settings": {
 	"import/resolver": {
 	  "node": {
-		"paths": ["src"],
-		"extensions": [".js", ".jsx"]
+			"paths": ["src"],
+			"extensions": [".js", ".jsx"]
 	  }
 	}
   },
@@ -152,7 +152,7 @@
 	"react/jsx-indent-props": ["warn", 2],
 	"react/jsx-key": "warn",
 	"react/jsx-max-props-per-line": ["warn", { "maximum": 4 }],
-	"react/jsx-props-no-spreading": "warn",
+	"react/jsx-props-no-spreading": "off",
 	"react/jsx-no-target-blank": "off",
 	"react/no-array-index-key": "warn",
 	"react/no-danger": "warn",
