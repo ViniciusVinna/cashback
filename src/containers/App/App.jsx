@@ -2,18 +2,22 @@ import React from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { Provider } from 'react-redux';
-
-import { persistor, store } from 'store';
+import { ThemeProvider } from 'emotion-theming';
 
 import { history } from 'modules';
+import { persistor, store } from 'store';
 
 import Routes from 'routes';
+
+import { light } from 'style/theme';
 
 const App = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor} loading={null}>
       <ConnectedRouter history={history}>
-        <Routes />
+        <ThemeProvider theme={light}>
+          <Routes />
+        </ThemeProvider>
       </ConnectedRouter>
     </PersistGate>
   </Provider>
