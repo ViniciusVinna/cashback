@@ -3,12 +3,12 @@
  * @param {object} obj
  * @returns {object} {}
  */
-export const keyMirror = (obj) => {
+export const keymirror = (obj) => {
   const mirrored = {};
   let key;
 
   if (!(obj instanceof Object && !Array.isArray(obj))) {
-    throw new Error('keyMirror(...): Argument must be an object.');
+    throw new Error('Keymirror(...): Argument must be an object.');
   }
 
   for (key in obj) {
