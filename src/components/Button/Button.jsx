@@ -13,7 +13,7 @@ const {
 const Button = ({ children, variation, ...rest }) => {
   if (variation === 'primary') {
     return (
-      <Primary type="button" {...rest}>
+      <Primary type="button" data-test-id="button" {...rest}>
         {children}
         <Ink />
       </Primary>
@@ -21,26 +21,18 @@ const Button = ({ children, variation, ...rest }) => {
   }
   if (variation === 'secondary') {
     return (
-      <Secondary type="button" {...rest}>
+      <Secondary type="button" data-test-id="button" {...rest}>
         {children}
         <Ink />
       </Secondary>
     );
   }
-  if (variation === 'default') {
-    return (
-      <Default type="button" {...rest}>
-        {children}
-        <Ink />
-      </Default>
-    );
-  }
 
   return (
-    <button type="button">
+    <Default type="button" data-test-id="button">
       {children}
       <Ink />
-    </button>
+    </Default>
   );
 };
 
