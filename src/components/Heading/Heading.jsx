@@ -15,16 +15,16 @@ const Heading = ({ children, level, ...rest }) => {
   if (level === 'h2') {
     return (<H2 {...rest}>{children}</H2>);
   }
-  else if (level === 'h2') {
+  else if (level === 'h3') {
     return (<H3 {...rest}>{children}</H3>);
   }
-  else if (level === 'h3') {
+  else if (level === 'h4') {
     return (<H4 {...rest}>{children}</H4>);
   }
-  else if (level === 'h4') {
+  else if (level === 'h5') {
     return (<H5 {...rest}>{children}</H5>);
   }
-  else if (level === 'h5') {
+  else if (level === 'h6') {
     return (<H6 {...rest}>{children}</H6>);
   }
 

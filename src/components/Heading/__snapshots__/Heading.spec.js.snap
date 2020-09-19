@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading it should render the h1 html element by default 1`] = `
+<div>
+  <h1
+    class="css-190evkz"
+  >
+    Heading 1 Title
+  </h1>
+</div>
+`;
+
+exports[`Heading it should render the h2 html element by default 1`] = `
+<div>
+  <h2
+    class="css-icz1uc"
+  >
+    Heading 2 Title
+  </h2>
+</div>
+`;
+
+exports[`Heading it should render the h3 html element by default 1`] = `
+<div>
+  <h3
+    class="css-1j6gc3q"
+  >
+    Heading 3 Title
+  </h3>
+</div>
+`;
+
+exports[`Heading it should render the h4 html element by default 1`] = `
+<div>
+  <h4
+    class="css-tzbvbu"
+  >
+    Heading 4 Title
+  </h4>
+</div>
+`;
+
+exports[`Heading it should render the h5 html element by default 1`] = `
+<div>
+  <h5
+    class="css-1oqlkh3"
+  >
+    Heading 5 Title
+  </h5>
+</div>
+`;
+
+exports[`Heading it should render the h6 html element by default 1`] = `
+<div>
+  <h6
+    class="css-1b7lpw4"
+  >
+    Heading 6 Title
+  </h6>
+</div>
+`;
