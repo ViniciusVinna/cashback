@@ -11,11 +11,14 @@ import Routes from 'routes';
 
 import { light } from 'style/theme';
 
+import GlobalStyles from './App.styled';
+
 const App = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor} loading={null}>
       <ConnectedRouter history={history}>
         <ThemeProvider theme={light}>
+          <GlobalStyles />
           <Routes />
         </ThemeProvider>
       </ConnectedRouter>
