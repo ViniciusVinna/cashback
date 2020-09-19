@@ -5,7 +5,9 @@
  * ===============================
  */
 
-const black = '#100F10';
+const black = {
+  black: '#100F10',
+};
 
 const blues = {
   b100: '#59ade1',
@@ -28,7 +30,7 @@ const neutrals = {
   n200: '#FAFBFC',
   n300: '#f5f8fa',
   n400: '#e1e3e6',
-  n500: '#52b947',
+  n500: '#cfd2d4',
 };
 
 const oranges = {
@@ -47,6 +49,14 @@ const reds = {
   r500: '#DB4D4D',
 };
 
+const darkColors = {
+  d100: '#f5f8fa',
+  d200: '#e1e3e6',
+  d300: '#cfd2d4',
+  d400: '#909599',
+  d500: '#657787',
+};
+
 const semanticColors = {
   danger: reds.r500,
   success: greens.g500,
@@ -54,6 +64,8 @@ const semanticColors = {
 };
 
 const applicationColors = {
+  primary: blues.b500,
+  secondary: greens.g400,
   bodyBg: neutrals.n200,
   bodyColor: black,
   shadow: 'rgba(12, 15, 20, 0.07)',
@@ -108,6 +120,19 @@ const borderSizes = {
 
 /**
  * ===============================
+ * Border Radius tokens
+ * ===============================
+*/
+
+const borderRadius = {
+  s: '4px',
+  m: '8px',
+  l: '12px',
+  xl: '72px',
+};
+
+/**
+ * ===============================
  * Z-index tokens
  * ===============================
 */
@@ -140,24 +165,68 @@ const lineHeight = {
 
 /**
  * ===============================
+ * Font size text tokens
+ * ===============================
+*/
+
+const fontSizes = {
+  xs: '0.75rem',
+  s: '0.875rem',
+  m: '1rem',
+  l: '1.25rem',
+  xl: '1.5rem',
+  xxl: '2.25rem',
+  xxxl: '3rem',
+  xxxxl: '4.5rem',
+};
+
+/**
+ * ===============================
+ * Box shadow tokens
+ * ===============================
+*/
+
+const boxShadows = {
+  tooltip: '0 2px 10px 0 rgba(0, 41, 77, 0.07)',
+  hover: '0 2px 10px 0 rgba(0, 41, 77, 0.1)',
+  modal: '0 2px 20px 0 rgba(0, 0, 0, 0.2)',
+  default: '0 2px 6px 0 rgba(0, 41, 77, 0.07)',
+  card: '0 2px 6px 0 rgba(0, 41, 77, 0.07), 0 -1px 0 0 rgba(0, 0, 0, 0.09), -1px 0 0 0 rgba(0, 0, 0, 0.07), 1px 0 0 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.07)',
+};
+
+const font = {
+  heading: '"Raleway", sans-serif',
+  headingSpacing: '-0.01rem',
+  headingWeight: '600',
+  text: '"Open Sans", sans-serif',
+};
+
+/**
+ * ===============================
  * Light theme
  * ===============================
 */
 
 const light = {
+  borderRadius: { ...borderRadius },
   borderSize: { ...borderSizes },
-  colors: {
+  boxShadow: { ...boxShadows },
+  color: {
     ...applicationColors,
+    ...black,
     ...blues,
+    ...darkColors,
     ...greens,
     ...neutrals,
     ...oranges,
     ...reds,
     ...semanticColors,
   },
+  font: { ...font },
   iconSize: { ...iconSizes },
   lineHeight: { ...lineHeight },
   space: { ...spacings },
+  textSize: { ...fontSizes },
   zIndex: { ...zIndex },
 };
 
