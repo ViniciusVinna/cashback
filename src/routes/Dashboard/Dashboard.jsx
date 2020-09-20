@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import Waves from 'components/Waves';
 
+import AddPurchase from 'containers/AddPurchase';
 import Balance from 'containers/Balance';
 import Drawer from 'containers/Drawer';
 import Profile from 'containers/Profile';
@@ -20,9 +21,25 @@ const {
 
 const Dashboard = () => {
   const [isVisible, setVisibility] = useDrawer();
+  const [purchaseHeight, setPurchaseHeight] = useState('0px');
+  const addPurchaseRef = useRef(null);
+
+  useEffect(() => {
+    const height = addPurchaseRef?.current?.offsetHeight || 0;
+
+    /* istanbul ignore else */
+    if (height && height > 0) {
+      const paddingHeight = `${height * 2}px`;
+
+      setPurchaseHeight(paddingHeight);
+    }
+  }, [purchaseHeight, addPurchaseRef]);
 
   return (
-    <DashboardPage data-testid="signin">
+    <DashboardPage
+      data-testid="dashboard"
+      style={{ paddingBottom: `${purchaseHeight}` }}
+    >
       <Header>
         <HeaderWrapper>
           <Profile />
@@ -34,6 +51,8 @@ const Dashboard = () => {
       <Content>
         <Transactions />
       </Content>
+
+      <AddPurchase ref={addPurchaseRef} />
 
       <Drawer
         isVisible={isVisible}

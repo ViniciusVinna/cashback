@@ -17,12 +17,12 @@ export default {
     width: 100vw;
   `),
   Header: styled('header')(({ theme }) => css`
-    background-color: ${theme.color.g500};
+    background: ${theme.color.g500};
+    background: linear-gradient(180deg, ${theme.color.g300} 0%,  ${theme.color.g500} 100%);
     width: 100%;
   `),
-  HeaderWrapper: styled('div')(({ theme }) => css`
-    background-color: ${theme.color.g500};
+  HeaderWrapper: styled('div')`
     width: 100%;
     text-align: center;
-  `),
+  `,
 };
