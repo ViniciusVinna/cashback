@@ -10,7 +10,7 @@ const black = {
 };
 
 const blues = {
-  b100: '#59ade1',
+  b100: '#b9e4ff',
   b200: '#3d94c9',
   b300: '#3188be',
   b400: '#228dcd',
@@ -20,7 +20,7 @@ const blues = {
 const greens = {
   g100: '#d7df21',
   g200: '#c4d82d',
-  g300: '#9bcb3b',
+  g300: '#80c83a',
   g400: '#7dc242',
   g500: '#52b947',
 };
@@ -166,6 +166,18 @@ const lineHeight = {
 
 /**
  * ===============================
+ * Font Weight tokens
+ * ===============================
+ */
+
+const fontWeight = {
+  s: '400',
+  m: '600',
+  l: '800',
+};
+
+/**
+ * ===============================
  * Font size text tokens
  * ===============================
 */
@@ -235,6 +247,7 @@ const light = {
     ...semanticColors,
   },
   font: { ...font },
+  fontWeight: { ...fontWeight },
   iconSize: { ...iconSizes },
   lineHeight: { ...lineHeight },
   space: { ...spacings },
