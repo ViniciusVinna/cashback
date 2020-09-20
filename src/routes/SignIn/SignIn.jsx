@@ -5,7 +5,10 @@ import Heading from 'components/Heading';
 import Logo from 'components/Logo';
 import Waves from 'components/Waves';
 
-import { LoginForm } from 'containers/Forms';
+import Drawer from 'containers/Drawer';
+import { LoginForm, SigninForm } from 'containers/Forms';
+
+import { useDrawer } from 'hooks';
 
 import SignInStyled from './SignIn.styled';
 
@@ -18,30 +21,48 @@ const {
   HeaderWrapper,
 } = SignInStyled;
 
-const Signin = () => (
-  <SigninPage data-testid="signin">
-    <ContentGroup>
-      <Header>
-        <HeaderWrapper>
-          <Logo type="group-dark" />
-        </HeaderWrapper>
-        <Waves />
-      </Header>
+const Signin = () => {
+  const [isVisible, setVisibility] = useDrawer();
 
-      <Content>
-        <Heading level="h3">Login</Heading>
-        <LoginForm />
+  return (
+    <SigninPage data-testid="signin">
+      <ContentGroup>
+        <Header>
+          <HeaderWrapper>
+            <Logo type="group-dark" />
+          </HeaderWrapper>
+          <Waves />
+        </Header>
 
-        <Button variation="secondary">Criar conta</Button>
-      </Content>
+        <Content>
+          <Heading level="h3">Login</Heading>
+          <LoginForm />
 
-      <Copyright>
-        Desenvolvido com
-        <span role="img" aria-label="amor">❤️</span>
-        por Vinna
-      </Copyright>
-    </ContentGroup>
-  </SigninPage>
-);
+          <Button
+            variation="secondary"
+            onClick={() => setVisibility(true)}
+          >
+            Criar conta
+          </Button>
+        </Content>
+
+        <Copyright>
+          Desenvolvido com
+          <span role="img" aria-label="amor">❤️</span>
+          por Vinna
+        </Copyright>
+      </ContentGroup>
+
+      <Drawer
+        isVisible={isVisible}
+        onCloseHandler={() => setVisibility(false)}
+        title="Criar conta"
+      >
+        <p>Cadastre-se e comece a ganhar cashback a partir de suas próximas compras!</p>
+        <SigninForm />
+      </Drawer>
+    </SigninPage>
+  );
+};
 
 export default Signin;
