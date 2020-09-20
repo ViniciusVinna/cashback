@@ -146,9 +146,10 @@ const zIndex = {
   toast: '500',
   dropdown: '600',
   overlay: '700',
+  drawer: '750',
   spinner: '800',
   modal: '900',
-  popup: '950',
+  popup: '100',
 };
 
 /**
@@ -194,6 +195,16 @@ const boxShadows = {
   card: '0 2px 6px 0 rgba(0, 41, 77, 0.07), 0 -1px 0 0 rgba(0, 0, 0, 0.09), -1px 0 0 0 rgba(0, 0, 0, 0.07), 1px 0 0 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.07)',
 };
 
+const transitions = {
+  bezier: 'all cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s',
+};
+
+/**
+ * ===============================
+ * Font shadow tokens
+ * ===============================
+*/
+
 const font = {
   heading: '"Raleway", sans-serif',
   headingSpacing: '-0.01rem',
@@ -227,6 +238,7 @@ const light = {
   lineHeight: { ...lineHeight },
   space: { ...spacings },
   textSize: { ...fontSizes },
+  transition: { ...transitions },
   zIndex: { ...zIndex },
 };
 
