@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile it should render properly 1`] = `
+<div>
+  <div
+    class="css-157n9gf"
+    data-testid="profile"
+  >
+    <div
+      class="css-1g47b3l"
+    >
+      <div
+        class="css-1mcyu8t"
+        data-testid="logo"
+      >
+        <svg
+          preserveAspectRatio="xMidYMid slice"
+        >
+          sign.svg
+        </svg>
+      </div>
+    </div>
+    <div
+      class="css-pqvzuk"
+    >
+      <h6
+        class="css-1b7lpw4"
+      >
+        Vinícius Ribeiro
+      </h6>
+    </div>
+    <figure
+      class="css-q5erda"
+    >
+      <img
+        alt="Imagem de perfil"
+        src="avatar-1.svg"
+      />
+    </figure>
+  </div>
+</div>
+`;
