@@ -20,7 +20,7 @@ const Drawer = ({ children, isVisible, onCloseHandler, title }) => (
     <DrawerWrapper isVisible={isVisible} data-testid="drawer">
       <Header>
         <HeaderContainer>
-          <BackIcon onClick={onCloseHandler} />
+          <BackIcon data-testid="close-drawer" onClick={onCloseHandler} />
           <Heading level="h4">{title}</Heading>
         </HeaderContainer>
         <Waves />

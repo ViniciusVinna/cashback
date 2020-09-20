@@ -14,6 +14,7 @@ exports[`Drawer it should render properly 1`] = `
       >
         <svg
           class="css-d4tpuw"
+          data-testid="close-drawer"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -44,7 +45,7 @@ exports[`Drawer it should render properly 1`] = `
       </svg>
     </header>
     <div
-      class="css-1vm8lad"
+      class="css-ypkpmz"
     >
       <div>
         child

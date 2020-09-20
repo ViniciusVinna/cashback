@@ -48,7 +48,7 @@ export const DrawerStyled = {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: ${theme.space.xs} ${theme.space.xxl};
+    padding: ${theme.space.xs} ${theme.space.m};
     width: 100%;
 
     & p {
