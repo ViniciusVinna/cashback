@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Balance it should render properly 1`] = `
+<div>
+  <div
+    class="css-1dx82la"
+    data-testid="balance"
+  >
+    <header
+      class="css-d7tq2t"
+    >
+      <label
+        class="css-1miv8ke"
+      >
+        Saldo
+      </label>
+      <div
+        class="css-111w3cr"
+      >
+        R$ 450,00
+      </div>
+    </header>
+    <div
+      class="css-1jy0m1q"
+    >
+      <div
+        class="css-gi4i87"
+      >
+        <label
+          class="css-nwvdww"
+        >
+          Aprovado
+        </label>
+        <div
+          class="css-ybx47f"
+        >
+          R$ 72,00
+        </div>
+      </div>
+      <div
+        class="css-gi4i87"
+      >
+        <label
+          class="css-nwvdww"
+        >
+          Pendente
+        </label>
+        <div
+          class="css-ybx47f"
+        >
+          R$ 45,00
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
