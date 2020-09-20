@@ -171,6 +171,7 @@ const lineHeight = {
 */
 
 const fontSizes = {
+  xxs: '0.6rem',
   xs: '0.75rem',
   s: '0.875rem',
   m: '1rem',
