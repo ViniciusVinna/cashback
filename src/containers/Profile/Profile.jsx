@@ -2,24 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Heading from 'components/Heading';
+import Logo from 'components/Logo';
 
 import defaultImage from 'assets/avatars/avatar-2.svg';
 
 import { ProfileStyled } from './Profile.styles';
 
-const { Avatar, ProfileWrapper, Username } = ProfileStyled;
+const { Avatar, ProfileBrand, ProfileWrapper, Username } = ProfileStyled;
 
 const Profile = ({ userImg, username }) => (
   <ProfileWrapper data-testid="profile">
-    <Avatar>
-      <img src={userImg} alt="Imagem de perfil" />
-    </Avatar>
-
+    <ProfileBrand>
+      <Logo type="sign" />
+    </ProfileBrand>
     <Username>
       <Heading level="h6">
         {username}
       </Heading>
     </Username>
+
+    <Avatar>
+      <img src={userImg} alt="Imagem de perfil" />
+    </Avatar>
   </ProfileWrapper>
 );
 
