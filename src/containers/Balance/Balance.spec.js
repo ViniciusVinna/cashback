@@ -5,7 +5,7 @@ import Balance from './Balance';
 describe('Balance', () => {
   it('it should render properly', () => {
     const { container } = render(
-      <Balance 
+      <Balance
         balance="R$ 450,00"
         approved="R$ 72,00"
         pending="R$ 45,00"
