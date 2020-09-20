@@ -1,6 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button it should render the default button when no props is declared 1`] = `
+exports[`Button when is disabled it should render the default button when no props is declared 1`] = `
+<div>
+  <button
+    class="css-1ezzk16"
+    data-test-id="button"
+    disabled=""
+    type="button"
+  >
+    Default Button
+    <canvas
+      height="0"
+      style="border-radius: inherit; height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      width="0"
+    />
+  </button>
+</div>
+`;
+
+exports[`Button when is disabled it should render the primary button 1`] = `
+<div>
+  <button
+    class="css-1ezzk16"
+    data-test-id="button"
+    disabled=""
+    type="button"
+  >
+    Primary Button
+    <canvas
+      height="0"
+      style="border-radius: inherit; height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      width="0"
+    />
+  </button>
+</div>
+`;
+
+exports[`Button when is disabled it should render the secondary button 1`] = `
+<div>
+  <button
+    class="css-1ezzk16"
+    data-test-id="button"
+    disabled=""
+    type="button"
+  >
+    Secondary Button
+    <canvas
+      height="0"
+      style="border-radius: inherit; height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      width="0"
+    />
+  </button>
+</div>
+`;
+
+exports[`Button when is enabled it should render the default button when no props is declared 1`] = `
 <div>
   <button
     class="css-tdfxln"
@@ -17,7 +71,7 @@ exports[`Button it should render the default button when no props is declared 1`
 </div>
 `;
 
-exports[`Button it should render the primary button 1`] = `
+exports[`Button when is enabled it should render the primary button 1`] = `
 <div>
   <button
     class="css-tdfxln"
@@ -34,7 +88,7 @@ exports[`Button it should render the primary button 1`] = `
 </div>
 `;
 
-exports[`Button it should render the secondary button 1`] = `
+exports[`Button when is enabled it should render the secondary button 1`] = `
 <div>
   <button
     class="css-exvprd"

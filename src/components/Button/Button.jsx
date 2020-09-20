@@ -1,6 +1,7 @@
 import React from 'react';
-import Ink from 'react-ink';
 import PropTypes from 'prop-types';
+
+import Ripple from 'components/Ripple';
 
 import { ButtonStyled } from './Button.styles';
 
@@ -15,7 +16,7 @@ const Button = ({ children, variation, ...rest }) => {
     return (
       <Primary type="button" data-test-id="button" {...rest}>
         {children}
-        <Ink />
+        <Ripple />
       </Primary>
     );
   }
@@ -23,15 +24,15 @@ const Button = ({ children, variation, ...rest }) => {
     return (
       <Secondary type="button" data-test-id="button" {...rest}>
         {children}
-        <Ink />
+        <Ripple />
       </Secondary>
     );
   }
 
   return (
-    <Default type="button" data-test-id="button">
+    <Default type="button" data-test-id="button" {...rest}>
       {children}
-      <Ink />
+      <Ripple />
     </Default>
   );
 };
