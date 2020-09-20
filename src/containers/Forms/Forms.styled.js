@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
 export default {
-  Form: styled('form')(({ theme }) => css`
-    border-bottom: 1px solid ${theme.color.n400};
+  Form: styled('form')(({ theme, noBorder }) => css`
+    border-bottom: 1px solid ${noBorder ? 'transparent' : theme.color.n400};
     display: flex;
     flex-direction: column;
     margin-bottom: ${theme.space.l};
