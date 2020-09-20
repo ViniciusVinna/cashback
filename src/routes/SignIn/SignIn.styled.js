@@ -35,12 +35,13 @@ export default {
       padding: 0 ${theme.space.xxs};
     }
   `),
-  Header: styled('header')(({ theme }) => css`
+  Header: styled('header')`
     width: 100%;
     margin-bottom: auto;
-  `),
+  `,
   HeaderWrapper: styled('div')(({ theme }) => css`
-    background-color: ${theme.color.g500};
+    background: ${theme.color.g500};
+    background: linear-gradient(180deg, ${theme.color.g300} 0%,  ${theme.color.g500} 100%);
     width: 100%;
     text-align: center;
 
