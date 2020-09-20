@@ -1,53 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Drawer basic functionality it should be a render children 1`] = `
-<div
-  class="css-celd7p"
-  data-testid="drawer"
->
-  <header
-    class="css-k5577l"
+exports[`Drawer it should render properly 1`] = `
+<div>
+  <div
+    class="css-ffmk6d"
+    data-testid="drawer"
   >
     <header
-      class="css-16zn5ys"
+      class="css-k5577l"
     >
+      <header
+        class="css-16zn5ys"
+      >
+        <svg
+          class="css-d4tpuw"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M427 234.625H167.296l119.702-119.702L256 85 85 256l171 171 29.922-29.924-118.626-119.701H427v-42.75z"
+          />
+        </svg>
+        <h4
+          class="css-tzbvbu"
+        >
+          Drawer Title
+        </h4>
+      </header>
       <svg
-        class="css-d4tpuw"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        stroke-width="0"
-        viewBox="0 0 512 512"
-        width="1em"
+        viewBox="0 0 1440 320"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M427 234.625H167.296l119.702-119.702L256 85 85 256l171 171 29.922-29.924-118.626-119.701H427v-42.75z"
+          d="M0,32L60,58.7C120,85,240,139,360,144C480,149,600,107,720,80C840,53,960,43,1080,74.7C1200,107,1320,181,1380,218.7L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+          fill="#52b947"
+          fill-opacity="1"
         />
       </svg>
-      <h4
-        class="css-tzbvbu"
-      >
-        Drawer Title
-      </h4>
     </header>
-    <svg
-      viewBox="0 0 1440 320"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="css-1vm8lad"
     >
-      <path
-        d="M0,32L60,58.7C120,85,240,139,360,144C480,149,600,107,720,80C840,53,960,43,1080,74.7C1200,107,1320,181,1380,218.7L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-        fill="#52b947"
-        fill-opacity="1"
-      />
-    </svg>
-  </header>
-  <div
-    class="css-1vm8lad"
-  >
-    <div>
-      child
+      <div>
+        child
+      </div>
     </div>
   </div>
+  <div
+    class="css-ty5eet"
+  />
 </div>
 `;
