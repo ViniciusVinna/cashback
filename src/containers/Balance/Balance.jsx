@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { BalanceStyled } from './Balance.styled';
 
-const { 
+const {
   BalanceWidget,
   Header,
   Title,
