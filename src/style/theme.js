@@ -68,7 +68,7 @@ const applicationColors = {
   secondary: greens.g400,
   bodyBg: neutrals.n200,
   bodyColor: black,
-  shadow: 'rgba(12, 15, 20, 0.07)',
+  shadow: 'rgba(12, 15, 20, 0.5)',
 };
 
 /**
