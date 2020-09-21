@@ -4,11 +4,13 @@ import Waves from 'components/Waves';
 
 import AddPurchase from 'containers/AddPurchase';
 import Balance from 'containers/Balance';
+import Dialog from 'containers/Dialog';
 import Drawer from 'containers/Drawer';
 import Profile from 'containers/Profile';
 import Transactions from 'containers/Transactions';
+import { PurchaseForm } from 'containers/Forms';
 
-import { useDrawer } from 'hooks';
+import { useDialog, useDrawer } from 'hooks';
 
 import SignInStyled from './Dashboard.styled';
 
@@ -20,7 +22,8 @@ const {
 } = SignInStyled;
 
 const Dashboard = () => {
-  const [isVisible, setVisibility] = useDrawer();
+  const [isDialogVisible, setDialogVisibility, toggleDialog] = useDialog(false);
+  const [isDrawerVisible, setDrawerVisibility] = useDrawer();
   const [purchaseHeight, setPurchaseHeight] = useState('0px');
   const addPurchaseRef = useRef(null);
 
@@ -52,11 +55,24 @@ const Dashboard = () => {
         <Transactions />
       </Content>
 
-      <AddPurchase ref={addPurchaseRef} />
+      <Dialog
+        isVisible={isDialogVisible}
+        onCloseHandler={() => setDialogVisibility(false)}
+        onConfirmHandler={() => {}}
+        title="Cadastrar Compra"
+        renderComponent={(
+          <AddPurchase
+            onClickHandler={toggleDialog}
+            ref={addPurchaseRef}
+          />
+        )}
+      >
+        <PurchaseForm />
+      </Dialog>
 
       <Drawer
-        isVisible={isVisible}
-        onCloseHandler={() => setVisibility(false)}
+        isVisible={isDrawerVisible}
+        onCloseHandler={() => setDrawerVisibility(false)}
         title="Informações de compra"
       >
         <p>Informações de compra</p>
