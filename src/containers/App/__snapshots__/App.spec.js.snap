@@ -1,0 +1,378 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App it should render properly 1`] = `
+<div>
+  <section
+    class="css-p33yw0"
+    data-testid="signin"
+  >
+    <div
+      class="css-1budew8"
+    >
+      <header
+        class="css-1u3mszz"
+      >
+        <div
+          class="css-1cj2ldo"
+        >
+          <div
+            class="css-1mcyu8t"
+            data-testid="logo"
+          >
+            <svg
+              preserveAspectRatio="xMidYMid slice"
+            >
+              group-logo-dark-mode.svg
+            </svg>
+          </div>
+        </div>
+        <svg
+          viewBox="0 0 1440 320"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,32L60,58.7C120,85,240,139,360,144C480,149,600,107,720,80C840,53,960,43,1080,74.7C1200,107,1320,181,1380,218.7L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+            fill="#52b947"
+            fill-opacity="1"
+          />
+        </svg>
+      </header>
+      <div
+        class="css-mgu7u"
+      >
+        <h3
+          class="css-1j6gc3q"
+        >
+          Login
+        </h3>
+        <form
+          class="css-1ywmfgl"
+          data-testid="login-form"
+        >
+          <label
+            class="css-13tv2p4"
+            for="email"
+          >
+            E-mail
+          </label>
+          <div
+            class="css-bhvw3g"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline
+                points="22,6 12,13 2,6"
+              />
+            </svg>
+            <input
+              class="css-1gdjj4x"
+              name="email"
+              placeholder="digite seu email..."
+            />
+          </div>
+          <label
+            class="css-13tv2p4"
+            for="password"
+          >
+            Senha
+          </label>
+          <div
+            class="css-bhvw3g"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                height="11"
+                rx="2"
+                ry="2"
+                width="18"
+                x="3"
+                y="11"
+              />
+              <path
+                d="M7 11V7a5 5 0 0 1 10 0v4"
+              />
+            </svg>
+            <input
+              class="css-1gdjj4x"
+              name="password"
+              placeholder="digite sua senha..."
+              type="password"
+            />
+          </div>
+          <button
+            class="css-tdfxln"
+            type="submit"
+          >
+            Entrar
+            <canvas
+              height="0"
+              style="border-radius: inherit; height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              width="0"
+            />
+          </button>
+        </form>
+        <button
+          class="css-exvprd"
+          data-test-id="button"
+          type="button"
+        >
+          Criar conta
+          <canvas
+            height="0"
+            style="border-radius: inherit; height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+            width="0"
+          />
+        </button>
+      </div>
+      <div
+        class="css-ksbno1"
+      >
+        Desenvolvido com
+        <span
+          aria-label="amor"
+          role="img"
+        >
+          ❤️
+        </span>
+        por Vinna
+      </div>
+    </div>
+    <div
+      class="css-celd7p"
+      data-testid="drawer"
+    >
+      <header
+        class="css-k5577l"
+      >
+        <header
+          class="css-16zn5ys"
+        >
+          <svg
+            class="css-d4tpuw"
+            data-testid="close-drawer"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M427 234.625H167.296l119.702-119.702L256 85 85 256l171 171 29.922-29.924-118.626-119.701H427v-42.75z"
+            />
+          </svg>
+          <h4
+            class="css-tzbvbu"
+          >
+            Criar conta
+          </h4>
+        </header>
+        <svg
+          viewBox="0 0 1440 320"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,32L60,58.7C120,85,240,139,360,144C480,149,600,107,720,80C840,53,960,43,1080,74.7C1200,107,1320,181,1380,218.7L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+            fill="#52b947"
+            fill-opacity="1"
+          />
+        </svg>
+      </header>
+      <div
+        class="css-ypkpmz"
+      >
+        <p>
+          Cadastre-se e comece a ganhar cashback a partir de suas próximas compras!
+        </p>
+        <form
+          class="css-3mxqed"
+        >
+          <label
+            class="css-13tv2p4"
+            for="username"
+          >
+            Nome Completo
+          </label>
+          <div
+            class="css-bhvw3g"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+              />
+              <circle
+                cx="12"
+                cy="7"
+                r="4"
+              />
+            </svg>
+            <input
+              class="css-1gdjj4x"
+              data-testid="signin-form"
+              name="username"
+              placeholder="digite seu nome..."
+              type="text"
+            />
+          </div>
+          <label
+            class="css-13tv2p4"
+            for="cpf"
+          >
+            CPF
+          </label>
+          <div
+            class="css-bhvw3g"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.715,12c1.151,0,2-0.849,2-2s-0.849-2-2-2s-2,0.849-2,2S8.563,12,9.715,12z"
+              />
+              <path
+                d="M20,4H4C2.897,4,2,4.841,2,5.875v12.25C2,19.159,2.897,20,4,20h16c1.103,0,2-0.841,2-1.875V5.875C22,4.841,21.103,4,20,4z M20,18L4,17.989V6l16,0.011V18z"
+              />
+              <path
+                d="M14 9H18V11H14zM15 13H18V15H15zM13.43 15.536c0-1.374-1.676-2.786-3.715-2.786S6 14.162 6 15.536V16h7.43V15.536z"
+              />
+            </svg>
+            <input
+              class="css-1gdjj4x"
+              name="cpf"
+              placeholder="000.000.000-00"
+              type="tel"
+              value=""
+            />
+          </div>
+          <label
+            class="css-13tv2p4"
+            for="email"
+          >
+            E-mail
+          </label>
+          <div
+            class="css-bhvw3g"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline
+                points="22,6 12,13 2,6"
+              />
+            </svg>
+            <input
+              class="css-1gdjj4x"
+              name="email"
+              placeholder="digite seu email..."
+            />
+          </div>
+          <label
+            class="css-13tv2p4"
+            for="password"
+          >
+            Senha
+          </label>
+          <div
+            class="css-bhvw3g"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                height="11"
+                rx="2"
+                ry="2"
+                width="18"
+                x="3"
+                y="11"
+              />
+              <path
+                d="M7 11V7a5 5 0 0 1 10 0v4"
+              />
+            </svg>
+            <input
+              class="css-1gdjj4x"
+              name="password"
+              placeholder="digite sua senha..."
+              type="password"
+            />
+          </div>
+          <button
+            class="css-exvprd"
+            data-test-id="button"
+            type="submit"
+          >
+            Finalizar Cadastro
+            <canvas
+              height="0"
+              style="border-radius: inherit; height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              width="0"
+            />
+          </button>
+        </form>
+      </div>
+    </div>
+    <div
+      class="css-ww0bbz"
+    />
+  </section>
+</div>
+`;
