@@ -1163,7 +1163,7 @@ exports[`Transactions List item itenteractions it should activate the list item 
       </div>
     </div>
     <div
-      class="css-4umn4o"
+      class="css-ww0bbz"
     />
   </div>
 </div>
@@ -2332,7 +2332,7 @@ exports[`Transactions List without interactions it should render properly 1`] = 
       </div>
     </div>
     <div
-      class="css-4umn4o"
+      class="css-ww0bbz"
     />
   </div>
 </div>
