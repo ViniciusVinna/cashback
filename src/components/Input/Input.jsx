@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 
 import { BiIdCard } from 'react-icons/bi';
 import {
+  FiCalendar,
+  FiDollarSign,
   FiLock,
   FiMail,
+  FiTag,
   FiUser,
 } from 'react-icons/fi';
 
@@ -26,6 +29,15 @@ const Input = forwardRef(({ name, ...rest }, ref) => {
   }
   else if (name === 'password') {
     iconOutput = (<FiLock />);
+  }
+  else if (name === 'code') {
+    iconOutput = (<FiTag />);
+  }
+  else if (name === 'date') {
+    iconOutput = (<FiCalendar />);
+  }
+  else if (name === 'value') {
+    iconOutput = (<FiDollarSign />);
   }
 
   return (

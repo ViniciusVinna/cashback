@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Input Input fields it should render the code input 1`] = `
+<div>
+  <div
+    class="css-bhvw3g"
+  >
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+      />
+      <line
+        x1="7"
+        x2="7"
+        y1="7"
+        y2="7"
+      />
+    </svg>
+    <input
+      class="css-309ol0"
+      name="code"
+      type="tel"
+      value="123456789"
+    />
+  </div>
+</div>
+`;
+
 exports[`Input Input fields it should render the cpf input 1`] = `
 <div>
   <div
@@ -29,6 +65,59 @@ exports[`Input Input fields it should render the cpf input 1`] = `
       name="cpf"
       type="text"
       value="test value"
+    />
+  </div>
+</div>
+`;
+
+exports[`Input Input fields it should render the date input 1`] = `
+<div>
+  <div
+    class="css-bhvw3g"
+  >
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        height="18"
+        rx="2"
+        ry="2"
+        width="18"
+        x="3"
+        y="4"
+      />
+      <line
+        x1="16"
+        x2="16"
+        y1="2"
+        y2="6"
+      />
+      <line
+        x1="8"
+        x2="8"
+        y1="2"
+        y2="6"
+      />
+      <line
+        x1="3"
+        x2="21"
+        y1="10"
+        y2="10"
+      />
+    </svg>
+    <input
+      class="css-309ol0"
+      name="date"
+      type="date"
+      value="17/10/2009"
     />
   </div>
 </div>
@@ -150,6 +239,42 @@ exports[`Input Input fields it should render the username input 1`] = `
       name="username"
       type="text"
       value="test value"
+    />
+  </div>
+</div>
+`;
+
+exports[`Input Input fields it should render the value input 1`] = `
+<div>
+  <div
+    class="css-bhvw3g"
+  >
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        x1="12"
+        x2="12"
+        y1="1"
+        y2="23"
+      />
+      <path
+        d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+      />
+    </svg>
+    <input
+      class="css-309ol0"
+      name="value"
+      type="text"
+      value="250,00"
     />
   </div>
 </div>

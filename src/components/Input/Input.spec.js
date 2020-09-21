@@ -43,6 +43,30 @@ describe('Input', () => {
 
       expect(container).toMatchSnapshot();
     });
+
+    it('it should render the code input', () => {
+      const { container } = render(
+        <Input name="code" type="tel" defaultValue="123456789" />
+      );
+
+      expect(container).toMatchSnapshot();
+    });
+
+    it('it should render the value input', () => {
+      const { container } = render(
+        <Input name="value" type="text" defaultValue="250,00" />
+      );
+
+      expect(container).toMatchSnapshot();
+    });
+
+    it('it should render the date input', () => {
+      const { container } = render(
+        <Input name="date" type="date" defaultValue="17/10/2009" />
+      );
+
+      expect(container).toMatchSnapshot();
+    });
   });
 
   describe('Submit field', () => {
