@@ -4,13 +4,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from 'containers/PrivateRoute';
 
 import Dashboard from './Dashboard';
-import SignIn from './SignIn';
+import Signin from './Signin';
 
 const Routes = () => (
   <Router>
     <Switch>
       <Route path="/" exact={true}>
-        <SignIn />
+        <Signin />
       </Route>
 
       <PrivateRoute path="/dashboard">

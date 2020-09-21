@@ -10,7 +10,7 @@ import { LoginForm, SigninForm } from 'containers/Forms';
 
 import { useDrawer } from 'hooks';
 
-import SignInStyled from './SignIn.styled';
+import SigninStyled from './Signin.styled';
 
 const {
   SigninPage,
@@ -19,7 +19,7 @@ const {
   Copyright,
   Header,
   HeaderWrapper,
-} = SignInStyled;
+} = SigninStyled;
 
 const Signin = () => {
   const [isVisible, setVisibility] = useDrawer();
