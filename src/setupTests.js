@@ -4,6 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import 'babel-polyfill';
 import 'jest-extended';
 import 'jest-localstorage-mock';
+import mutationObserver from 'mutation-observer';
 import deepmerge from 'deepmerge';
 
 import { MemoryRouter } from 'react-router';
@@ -103,6 +104,7 @@ global.actHook = actHook;
 global.cleanup = cleanup;
 global.create = create;
 global.fireEvent = fireEvent;
+global.MutationObserver = mutationObserver;
 global.render = renderWithProviders(renderTest);
 global.renderHook = renderHook;
 global.renderWithRedux = renderWithRedux;
