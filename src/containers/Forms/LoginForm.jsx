@@ -12,7 +12,7 @@ export const LoginForm = () => {
   const onSubmit = data => console.log(data);
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} data-testid="login-form">
       <Label htmlFor="email">E-mail</Label>
       <Input
         name="email"

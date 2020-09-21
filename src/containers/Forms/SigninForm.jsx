@@ -20,6 +20,7 @@ export const SigninForm = () => {
         type="text"
         placeholder="digite seu nome..."
         ref={register}
+        data-testid="signin-form"
       />
 
       <Label htmlFor="cpf">CPF</Label>
