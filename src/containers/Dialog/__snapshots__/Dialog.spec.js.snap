@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog interactions should end the dialog when click on the close button 1`] = `
+<div>
+  <div>
+    Trigger Component
+  </div>
+</div>
+`;
+
+exports[`Dialog interactions should end the dialog when esc key is pressed 1`] = `
+<div>
+  <div>
+    Trigger Component
+  </div>
+</div>
+`;
+
+exports[`Dialog no interactions should render properly 1`] = `
+<div>
+  <div>
+    Trigger Component
+  </div>
+</div>
+`;

@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import { FiPlus } from 'react-icons/fi';
 
 import Ripple from 'components/Ripple';
@@ -11,8 +12,12 @@ const {
   PurchaseButtonWrapper,
 } = AddPurchaseStyled;
 
-const AddPurchase = forwardRef((props, ref) => (
-  <AddPurchaseWidget ref={ref} data-testid="add-purchase">
+const AddPurchase = forwardRef(({ onClickHandler }, ref) => (
+  <AddPurchaseWidget
+    onClick={onClickHandler}
+    ref={ref}
+    data-testid="add-purchase"
+  >
     <PurchaseButtonWrapper>
       <PurchaseButton>
         <FiPlus />
@@ -22,5 +27,13 @@ const AddPurchase = forwardRef((props, ref) => (
     Cadastrar Compra
   </AddPurchaseWidget>
 ));
+
+AddPurchase.propTypes = {
+  onClickHandler: PropTypes.func,
+};
+
+AddPurchase.defaultProps = {
+  onClickHandler: () => {},
+};
 
 export default AddPurchase;
