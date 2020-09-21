@@ -34,7 +34,7 @@ exports[`Forms LoginForm should render properly 1`] = `
         />
       </svg>
       <input
-        class="css-309ol0"
+        class="css-1gdjj4x"
         name="email"
         placeholder="digite seu email..."
       />
@@ -72,7 +72,7 @@ exports[`Forms LoginForm should render properly 1`] = `
         />
       </svg>
       <input
-        class="css-309ol0"
+        class="css-1gdjj4x"
         name="password"
         placeholder="digite sua senha..."
         type="password"
@@ -130,7 +130,7 @@ exports[`Forms PurchaseForm should render properly 1`] = `
         />
       </svg>
       <input
-        class="css-309ol0"
+        class="css-1gdjj4x"
         name="code"
         placeholder="000000000000"
         type="text"
@@ -167,7 +167,7 @@ exports[`Forms PurchaseForm should render properly 1`] = `
         />
       </svg>
       <input
-        class="css-309ol0"
+        class="css-1gdjj4x"
         name="value"
         placeholder="R$ 00,00"
         type="tel"
@@ -221,7 +221,7 @@ exports[`Forms PurchaseForm should render properly 1`] = `
         />
       </svg>
       <input
-        class="css-309ol0"
+        class="css-1gdjj4x"
         name="date"
         placeholder="00/00/0000"
         type="date"
@@ -278,7 +278,7 @@ exports[`Forms SigninForm should render properly 1`] = `
         />
       </svg>
       <input
-        class="css-309ol0"
+        class="css-1gdjj4x"
         data-testid="signin-form"
         name="username"
         placeholder="digite seu nome..."
@@ -314,10 +314,11 @@ exports[`Forms SigninForm should render properly 1`] = `
         />
       </svg>
       <input
-        class="css-309ol0"
+        class="css-1gdjj4x"
         name="cpf"
         placeholder="000.000.000-00"
         type="tel"
+        value=""
       />
     </div>
     <label
@@ -348,7 +349,7 @@ exports[`Forms SigninForm should render properly 1`] = `
         />
       </svg>
       <input
-        class="css-309ol0"
+        class="css-1gdjj4x"
         name="email"
         placeholder="digite seu email..."
       />
@@ -386,7 +387,7 @@ exports[`Forms SigninForm should render properly 1`] = `
         />
       </svg>
       <input
-        class="css-309ol0"
+        class="css-1gdjj4x"
         name="password"
         placeholder="digite sua senha..."
         type="password"

@@ -15,4 +15,9 @@ export default {
     color: ${theme.color.d400};
     margin-bottom: ${theme.space.xxs};
   `),
+  Error: styled('div')(({ theme }) => css`
+    font-size: ${theme.textSize.xs};
+    color: ${theme.color.danger};
+    margin: -${theme.space.xxs} 0 ${theme.space.m};
+  `),
 };

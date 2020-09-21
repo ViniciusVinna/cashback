@@ -15,7 +15,7 @@ import InputStyled from './Input.styled';
 
 const { Field, FieldGroup } = InputStyled;
 
-const Input = forwardRef(({ name, ...rest }, ref) => {
+const Input = forwardRef(({ name, onChangeHandler, ...rest }, ref) => {
   let iconOutput;
 
   if (name === 'username') {
@@ -43,13 +43,19 @@ const Input = forwardRef(({ name, ...rest }, ref) => {
   return (
     <FieldGroup>
       {iconOutput}
-      <Field name={name} {...rest} ref={ref} />
+      <Field
+        name={name}
+        onChange={onChangeHandler}
+        ref={ref}
+        {...rest}
+      />
     </FieldGroup>
   );
 });
 
 Input.propTypes = {
   name: PropTypes.string,
+  onChangeHandler: PropTypes.func,
 };
 
 export default Input;

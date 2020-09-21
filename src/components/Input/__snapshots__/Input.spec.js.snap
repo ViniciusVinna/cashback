@@ -27,7 +27,7 @@ exports[`Input Input fields it should render the code input 1`] = `
       />
     </svg>
     <input
-      class="css-309ol0"
+      class="css-1gdjj4x"
       name="code"
       type="tel"
       value="123456789"
@@ -61,7 +61,7 @@ exports[`Input Input fields it should render the cpf input 1`] = `
       />
     </svg>
     <input
-      class="css-309ol0"
+      class="css-1gdjj4x"
       name="cpf"
       type="text"
       value="test value"
@@ -114,7 +114,7 @@ exports[`Input Input fields it should render the date input 1`] = `
       />
     </svg>
     <input
-      class="css-309ol0"
+      class="css-1gdjj4x"
       name="date"
       type="date"
       value="17/10/2009"
@@ -147,7 +147,7 @@ exports[`Input Input fields it should render the email input 1`] = `
       />
     </svg>
     <input
-      class="css-309ol0"
+      class="css-1gdjj4x"
       name="email"
       type="email"
       value="test value"
@@ -162,7 +162,7 @@ exports[`Input Input fields it should render the input with no icons 1`] = `
     class="css-bhvw3g"
   >
     <input
-      class="css-309ol0"
+      class="css-1gdjj4x"
       name="test"
       type="text"
       value="test value"
@@ -200,7 +200,7 @@ exports[`Input Input fields it should render the password input 1`] = `
       />
     </svg>
     <input
-      class="css-309ol0"
+      class="css-1gdjj4x"
       name="password"
       type="password"
       value="test value"
@@ -235,7 +235,7 @@ exports[`Input Input fields it should render the username input 1`] = `
       />
     </svg>
     <input
-      class="css-309ol0"
+      class="css-1gdjj4x"
       name="username"
       type="text"
       value="test value"
@@ -271,7 +271,7 @@ exports[`Input Input fields it should render the value input 1`] = `
       />
     </svg>
     <input
-      class="css-309ol0"
+      class="css-1gdjj4x"
       name="value"
       type="text"
       value="250,00"
