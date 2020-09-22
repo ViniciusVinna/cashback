@@ -10,7 +10,6 @@ import { keymirror } from 'modules';
  */
 export const AppConstants = keymirror({
   HIDE_ALERT: undefined,
-  SET_AUTH_TOKEN: undefined,
   SET_SCREEN_SIZE: undefined,
   SHOW_ALERT: undefined,
 });

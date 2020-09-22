@@ -4,12 +4,8 @@ import produce from 'immer';
 import { STATUS, UserConstants } from 'constants/index';
 
 const userState = {
+  accessToken: '',
   data: {},
-  cashback: {
-    data: {},
-    message: '',
-    status: STATUS.IDLE,
-  },
   create: {
     data: {},
     message: '',
@@ -19,42 +15,38 @@ const userState = {
     message: '',
     status: STATUS.IDLE,
   },
+  isLogged: false,
 };
 
 export default {
   user: handleActions({
-    [UserConstants.USER_AUTH_REQUEST]: (state) => produce(state, draft => {
-      draft.fetch.status = STATUS.RUNNING;
+    [UserConstants.USER_FETCH_REQUEST]: (state) => produce(state, draft => {
+      draft.accessToken = '';
+      draft.data = {};
+      draft.fetch = {
+        message: '',
+        status: STATUS.RUNNING,
+      };
     }),
-    [UserConstants.USER_AUTH_SUCCESS]: (state, { payload }) => produce(state, draft => {
-      draft.data = payload;
+    [UserConstants.USER_FETCH_SUCCESS]: (state, { payload }) => produce(state, draft => {
+      const { accessToken, ...rest } = payload;
+
+      draft.accessToken = accessToken;
+      draft.data = rest;
+      draft.isLogged = !!accessToken && Object.keys(rest).length > 0;
       draft.fetch.status = STATUS.SUCCESS;
     }),
-    [UserConstants.USER_AUTH_FAILURE]: (state, { payload: { message } }) => produce(state, draft => {
+    [UserConstants.USER_FETCH_FAILURE]: (state, { payload: { message } }) => produce(state, draft => {
       draft.fetch = {
         message,
         status: STATUS.ERROR,
       };
     }),
-    [UserConstants.USER_CASHBACK_REQUEST]: (state) => produce(state, draft => {
-      draft.cashback.status = STATUS.RUNNING;
-    }),
-    [UserConstants.USER_CASHBACK_SUCCESS]: (state, { payload }) => produce(state, draft => {
-      draft.cashback = {
-        data: payload,
-        message: '',
-        status: STATUS.SUCCESS,
-      };
-    }),
-    [UserConstants.USER_CASHBACK_FAILURE]: (state, { payload: { message } }) => produce(state, draft => {
-      draft.cashback = {
-        data: {},
-        message,
-        status: STATUS.ERROR,
-      };
-    }),
     [UserConstants.USER_CREATE_REQUEST]: (state) => produce(state, draft => {
-      draft.create.status = STATUS.RUNNING;
+      draft.create = {
+        message: '',
+        status: STATUS.RUNNING,
+      };
     }),
     [UserConstants.USER_CREATE_SUCCESS]: (state, { payload }) => produce(state, draft => {
       draft.create = {
