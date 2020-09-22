@@ -13,11 +13,11 @@ export const resources = {
   },
   userCreate: {
     method: 'POST',
-    endpoint: 'users-create',
+    endpoint: 'users',
   },
   userGet: {
-    method: 'POST',
-    endpoint: 'user-authenticate',
+    method: 'GET',
+    endpoint: 'users',
   },
   purchaseCreate: {
     method: 'POST',
