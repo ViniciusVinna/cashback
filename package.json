@@ -88,8 +88,8 @@
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9009 -s public",
     "storybook:build": "build-storybook -s public",
-    "test": "react-scripts test --modulePaths=src",
-    "test:coverage": "yarn test --coverage --watchAll=false --bail"
+    "test": "react-scripts test --modulePaths=src --silent",
+    "test:coverage": "yarn test --coverage --watchAll=false --bail --silent"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
