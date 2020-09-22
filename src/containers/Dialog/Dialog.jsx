@@ -19,19 +19,9 @@ const Dialog = ({
   children,
   onCloseHandler,
   isVisible,
-  onConfirmHandler,
   renderComponent,
   title,
 }) => {
-  const handleConfirm = () => {
-    /* istanbul ignore else */
-    if (onConfirmHandler) {
-      onConfirmHandler();
-    }
-
-    onCloseHandler();
-  };
-
   const handleKeyUp = useCallback((e) => {
     /* istanbul ignore else */
     if (e.keyCode === 27) {
@@ -80,13 +70,8 @@ Dialog.propTypes = {
   children: PropTypes.node.isRequired,
   isVisible: PropTypes.bool.isRequired,
   onCloseHandler: PropTypes.func.isRequired,
-  onConfirmHandler: PropTypes.func,
   renderComponent: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
-};
-
-Dialog.defaultProps = {
-  onConfirmHandler: () => {},
 };
 
 export default Dialog;

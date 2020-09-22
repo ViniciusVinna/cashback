@@ -58,7 +58,6 @@ const Dashboard = () => {
       <Dialog
         isVisible={isDialogVisible}
         onCloseHandler={() => setDialogVisibility(false)}
-        onConfirmHandler={() => {}}
         title="Cadastrar Compra"
         renderComponent={(
           <AddPurchase
