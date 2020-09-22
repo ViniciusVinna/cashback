@@ -9,23 +9,23 @@ import config from 'config';
 export const resources = {
   userCashbackGet: {
     method: 'POST',
-    endpoint: '/user-cashback',
+    endpoint: 'user-cashback',
   },
   userCreate: {
     method: 'POST',
-    endpoint: '/users-create',
+    endpoint: 'users-create',
   },
   userGet: {
     method: 'POST',
-    endpoint: '/user-authenticate',
+    endpoint: 'user-authenticate',
   },
   purchaseCreate: {
     method: 'POST',
-    endpoint: '/purchases-create',
+    endpoint: 'purchases-create',
   },
   purchaseDelete: {
     method: 'POST',
-    endpoint: '/purchases-delete',
+    endpoint: 'purchases-delete',
   },
 };
 
