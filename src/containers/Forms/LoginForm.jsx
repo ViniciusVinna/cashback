@@ -1,6 +1,9 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
+
+import { getUser } from 'actions';
 
 import { loginSchema } from 'modules/form-validations';
 
@@ -14,10 +17,14 @@ export const LoginForm = () => {
   const { errors, handleSubmit, register } = useForm({
     resolver: yupResolver(loginSchema),
   });
-  const onSubmit = data => console.log(data);
+  const dispatch = useDispatch();
+
+  const onSubmitHandler = (data) => {
+    dispatch(getUser(data));
+  };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)} data-testid="login-form">
+    <Form onSubmit={handleSubmit(onSubmitHandler)} data-testid="login-form">
       <Label htmlFor="email">E-mail</Label>
       <Input
         hasError={!!errors.email}

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
+
+import { createUser } from 'actions';
 
 import { formatCPF, signinSchema } from 'modules';
 
@@ -13,11 +16,12 @@ const { Error, Form, Label } = StyledForm;
 
 export const SigninForm = () => {
   const [cpf, setCPF] = useState('');
+  const dispatch = useDispatch();
   const { errors, handleSubmit, register } = useForm({
     resolver: yupResolver(signinSchema),
   });
 
-  const handleCPFChange = (e) => {
+  const handleCpfChange = (e) => {
     const { value } = e.target;
 
     /* istanbul ignore else */
@@ -30,10 +34,12 @@ export const SigninForm = () => {
     setCPF('');
   };
 
-  const onSubmit = data => console.log(data);
+  const onSubmitHandler = (data) => {
+    dispatch(createUser(data));
+  };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)} noBorder={true}>
+    <Form onSubmit={handleSubmit(onSubmitHandler)} noBorder={true}>
       <Label htmlFor="username">Nome Completo</Label>
       <Input
         hasError={!!errors.username}
@@ -49,7 +55,7 @@ export const SigninForm = () => {
       <Input
         hasError={!!errors.cpf}
         name="cpf"
-        onChangeHandler={handleCPFChange}
+        onChangeHandler={handleCpfChange}
         placeholder="000.000.000-00"
         ref={register({ required: true })}
         type="tel"
