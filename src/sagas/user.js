@@ -4,6 +4,8 @@
  */
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 
+import { push } from 'actions';
+
 import {
   client,
   endpoints,
@@ -22,6 +24,8 @@ export function* userGet({ payload }) {
       type: UserConstants.USER_FETCH_SUCCESS,
       payload: { ...JSON.parse(data) },
     });
+
+    yield put(push('/dashboard'));
   }
   catch ({ message, status }) {
     yield put({
