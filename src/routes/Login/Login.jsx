@@ -10,22 +10,22 @@ import { LoginForm, SigninForm } from 'containers/Forms';
 
 import { useDrawer } from 'hooks';
 
-import SigninStyled from './Signin.styled';
+import LoginStyled from './Login.styled';
 
 const {
-  SigninPage,
+  LoginPage,
   Content,
   ContentGroup,
   Copyright,
   Header,
   HeaderWrapper,
-} = SigninStyled;
+} = LoginStyled;
 
-const Signin = () => {
+const Login = () => {
   const [isVisible, setVisibility] = useDrawer();
 
   return (
-    <SigninPage data-testid="signin">
+    <LoginPage data-testid="signin">
       <ContentGroup>
         <Header>
           <HeaderWrapper>
@@ -61,8 +61,8 @@ const Signin = () => {
         <p>Cadastre-se e comece a ganhar cashback a partir de suas próximas compras!</p>
         <SigninForm />
       </Drawer>
-    </SigninPage>
+    </LoginPage>
   );
 };
 
-export default Signin;
+export default Login;

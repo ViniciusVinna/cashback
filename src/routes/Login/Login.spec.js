@@ -1,9 +1,9 @@
 import React from 'react';
-import Signin from './Signin';
+import Login from './Login';
 
-describe('Dashboard', () => {
+describe('Login', () => {
   it('it should render properly', () => {
-    const { container } = render(<Signin />);
+    const { container } = render(<Login />);
     expect(container).toMatchSnapshot();
   });
 });

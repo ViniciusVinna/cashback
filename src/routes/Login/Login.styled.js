@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
 export default {
-  SigninPage: styled('section')(({ theme }) => css`
+  LoginPage: styled('section')(({ theme }) => css`
     align-items: center;
     background-color: ${theme.color.n200};
     display: flex;

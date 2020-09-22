@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dashboard it should render properly 1`] = `
+exports[`Login it should render properly 1`] = `
 <div>
   <section
     class="css-p33yw0"
