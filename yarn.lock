@@ -7928,6 +7928,13 @@ got@^9.6.0:
     to-readable-stream "^1.0.0"
     url-parse-lax "^3.0.0"
 
+gotrue-js@^0.9.27:
+  version "0.9.27"
+  resolved "https://registry.yarnpkg.com/gotrue-js/-/gotrue-js-0.9.27.tgz#ed01b47e97781f10f26458ff77d83d97bcc65e08"
+  integrity sha512-XSQ9XGELrnf6bKYaGk+2z1E6aW6+wZ3S6ns3JQz9tXesBuwVPDv/xOTTZ/Qrtu85GJgxTjhJH447w09a73Tneg==
+  dependencies:
+    micro-api-client "^3.2.1"
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9, graceful-fs@^4.2.0, graceful-fs@^4.2.2, graceful-fs@^4.2.4:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
@@ -8908,6 +8915,11 @@ is-installed-globally@^0.3.1:
   dependencies:
     global-dirs "^2.0.1"
     is-path-inside "^3.0.1"
+
+is-lite@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/is-lite/-/is-lite-0.7.0.tgz#d2187f64533a078b22c47ffc0f0f5974da3ec67d"
+  integrity sha512-SVEESAnBt1dSyd+b5a9mN514vGO2kmZeX7+2szPuTIlgHvTICzhYFxvAC9tWUt6rfA+i0fBJY+xIgwpR3BRvxA==
 
 is-map@^2.0.1:
   version "2.0.1"
@@ -10690,6 +10702,11 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
+
+micro-api-client@^3.2.1:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/micro-api-client/-/micro-api-client-3.3.0.tgz#52dd567d322f10faffe63d19d4feeac4e4ffd215"
+  integrity sha512-y0y6CUB9RLVsy3kfgayU28746QrNMpSm9O/AYGNsBgOkJr/X/Jk0VLGoO8Ude7Bpa8adywzF+MzXNZRFRsNPhg==
 
 microevent.ts@~0.1.1:
   version "0.1.1"
@@ -12839,7 +12856,7 @@ qs@6.7.0:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
-qs@^6.6.0:
+qs@^6.6.0, qs@^6.9.4:
   version "6.9.4"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.4.tgz#9090b290d1f91728d3c22e54843ca44aea5ab687"
   integrity sha512-A1kFqHekCTM7cz0udomYUoYNWjBebHm/5wzU/XqrBRBNWectVH0QIiN+NEcZ0Dte5hvzHwbr8+XQmguPhJ6WdQ==
@@ -14642,6 +14659,11 @@ string-argv@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.3.1.tgz#95e2fbec0427ae19184935f816d74aaa4c5c19da"
   integrity sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==
+
+string-format@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/string-format/-/string-format-2.0.0.tgz#f2df2e7097440d3b65de31b6d40d54c96eaffb9b"
+  integrity sha512-bbEs3scLeYNXLecRRuk6uJxdXUSj6le/8rNPHChIJTn2V79aXVTR1EH2OH5zLKKoz0V02fOUKZZcw01pLUShZA==
 
 string-length@^2.0.0:
   version "2.0.0"
