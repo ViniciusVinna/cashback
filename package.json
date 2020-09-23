@@ -31,6 +31,7 @@
     "react-scripts": "3.4.3",
     "react-toastify": "^6.0.8",
     "react-transition-group": "^4.4.1",
+    "react-vivus": "^0.0.2",
     "redux": "^4.0.5",
     "redux-actions": "^2.6.5",
     "redux-persist": "^6.0.0",
@@ -38,6 +39,7 @@
     "string-format": "^2.0.0",
     "tree-changes": "^0.5.1",
     "uuid": "^8.3.0",
+    "vivus": "^0.4.5",
     "yup": "^0.29.3"
   },
   "devDependencies": {

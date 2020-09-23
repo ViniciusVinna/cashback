@@ -64,10 +64,13 @@ const semanticColors = {
 };
 
 const applicationColors = {
-  primary: blues.b500,
-  secondary: greens.g400,
+  bgLoading: 'rgba(255, 255, 255, 0.8)',
   bodyBg: neutrals.n200,
   bodyColor: black,
+  brandPrimary: '#4F7869',
+  brandSecondary: '#CF887E',
+  primary: blues.b500,
+  secondary: greens.g400,
   shadow: 'rgba(12, 15, 20, 0.5)',
 };
 
@@ -146,10 +149,12 @@ const zIndex = {
   toast: '500',
   dropdown: '600',
   overlay: '700',
-  drawer: '750',
-  spinner: '800',
-  modal: '900',
-  popup: '100',
+  drawer: '800',
+  spinner: '900',
+  modal: '1000',
+  loading: '1100',
+  popup: '1200',
+  tooltip: '1300',
 };
 
 /**
@@ -162,6 +167,18 @@ const lineHeight = {
   xs: '1.1em',
   s: '1.25em',
   m: '1.5',
+};
+
+/**
+ * ===============================
+ * Blur tokens
+ * ===============================
+ */
+
+const blur = {
+  s: 'blur(1px)',
+  m: 'blur(2px)',
+  l: 'blur(4px)',
 };
 
 /**
@@ -239,6 +256,7 @@ const light = {
     ...applicationColors,
     ...black,
     ...blues,
+    ...blur,
     ...darkColors,
     ...greens,
     ...neutrals,
