@@ -160,7 +160,7 @@ exports[`Login it should render properly 1`] = `
       </div>
     </div>
     <div
-      class="css-celd7p"
+      class="css-1fb699j"
       data-testid="drawer"
     >
       <header
@@ -202,7 +202,7 @@ exports[`Login it should render properly 1`] = `
         </svg>
       </header>
       <div
-        class="css-ypkpmz"
+        class="css-1rogqqt"
       >
         <p>
           Cadastre-se e comece a ganhar cashback a partir de suas próximas compras!

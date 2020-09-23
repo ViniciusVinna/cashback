@@ -727,7 +727,7 @@ exports[`Transactions List item itenteractions it should activate the list item 
       />
     </div>
     <div
-      class="css-celd7p"
+      class="css-lvnw3k"
       data-testid="drawer"
     >
       <header
@@ -769,7 +769,7 @@ exports[`Transactions List item itenteractions it should activate the list item 
         </svg>
       </header>
       <div
-        class="css-ypkpmz"
+        class="css-1tc17gr"
       >
         <div
           class="css-1fotvew"
@@ -1163,7 +1163,7 @@ exports[`Transactions List item itenteractions it should activate the list item 
       </div>
     </div>
     <div
-      class="css-ww0bbz"
+      class="css-6h85ol"
     />
   </div>
 </div>
@@ -1896,7 +1896,7 @@ exports[`Transactions List without interactions it should render properly 1`] = 
       />
     </div>
     <div
-      class="css-celd7p"
+      class="css-1fb699j"
       data-testid="drawer"
     >
       <header
@@ -1938,7 +1938,7 @@ exports[`Transactions List without interactions it should render properly 1`] = 
         </svg>
       </header>
       <div
-        class="css-ypkpmz"
+        class="css-1tc17gr"
       >
         <div
           class="css-1fotvew"

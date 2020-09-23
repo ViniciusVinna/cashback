@@ -24,6 +24,10 @@ const {
 const Login = () => {
   const [isVisible, setVisibility] = useDrawer();
 
+  const handleClose = () => {
+    setVisibility(false);
+  };
+
   return (
     <LoginPage data-testid="signin">
       <ContentGroup>
@@ -55,7 +59,8 @@ const Login = () => {
 
       <Drawer
         isVisible={isVisible}
-        onCloseHandler={() => setVisibility(false)}
+        extraPadding={true}
+        onClose={handleClose}
         title="Criar conta"
       >
         <p>Cadastre-se e comece a ganhar cashback a partir de suas próximas compras!</p>

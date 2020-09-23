@@ -840,7 +840,7 @@ exports[`Dashboard it should render properly 1`] = `
           />
         </div>
         <div
-          class="css-celd7p"
+          class="css-1fb699j"
           data-testid="drawer"
         >
           <header
@@ -882,7 +882,7 @@ exports[`Dashboard it should render properly 1`] = `
             </svg>
           </header>
           <div
-            class="css-ypkpmz"
+            class="css-1tc17gr"
           >
             <div
               class="css-1fotvew"
@@ -1324,7 +1324,7 @@ exports[`Dashboard it should render properly 1`] = `
       Cadastrar Compra
     </div>
     <div
-      class="css-celd7p"
+      class="css-1fb699j"
       data-testid="drawer"
     >
       <header
@@ -1366,7 +1366,7 @@ exports[`Dashboard it should render properly 1`] = `
         </svg>
       </header>
       <div
-        class="css-ypkpmz"
+        class="css-1tc17gr"
       >
         <p>
           Informações de compra
