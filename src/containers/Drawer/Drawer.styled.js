@@ -44,11 +44,11 @@ export const DrawerStyled = {
       margin: auto;
     }
   `),
-  Content: styled('div')(({ theme }) => css`
+  Content: styled('div')(({ theme, extraPadding }) => css`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: ${theme.space.xs} ${theme.space.m};
+    padding: ${theme.space.xs} ${extraPadding ? theme.space.xl : theme.space.m} ${theme.space.m};
     width: 100%;
 
     & p {

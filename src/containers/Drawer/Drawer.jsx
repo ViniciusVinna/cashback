@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Heading from 'components/Heading';
 import Waves from 'components/Waves';
 
-import { DrawerStyled } from './Drawer.styles';
+import { DrawerStyled } from './Drawer.styled';
 
 const {
   BackIcon,
@@ -15,24 +15,24 @@ const {
   Overlay,
 } = DrawerStyled;
 
-const Drawer = ({ children, isVisible, onCloseHandler, title }) => (
+const Drawer = ({ children, extraPadding, isVisible, onClose, title }) => (
   <Fragment>
     <DrawerWrapper isVisible={isVisible} data-testid="drawer">
       <Header>
         <HeaderContainer>
-          <BackIcon data-testid="close-drawer" onClick={onCloseHandler} />
+          <BackIcon data-testid="close-drawer" onClick={onClose} />
           <Heading level="h4">{title}</Heading>
         </HeaderContainer>
         <Waves />
       </Header>
 
-      <Content>
+      <Content extraPadding={extraPadding}>
         {children}
       </Content>
     </DrawerWrapper>
 
     <Overlay
-      onClick={onCloseHandler}
+      onClick={onClose}
       isVisible={isVisible}
     />
   </Fragment>
@@ -40,9 +40,14 @@ const Drawer = ({ children, isVisible, onCloseHandler, title }) => (
 
 Drawer.propTypes = {
   children: PropTypes.node.isRequired,
+  extraPadding: PropTypes.bool,
   isVisible: PropTypes.bool.isRequired,
-  onCloseHandler: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
+};
+
+Drawer.defaultProps = {
+  extraPadding: false,
 };
 
 export default Drawer;

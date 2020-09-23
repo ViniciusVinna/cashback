@@ -3,7 +3,7 @@
 exports[`Drawer it should render properly 1`] = `
 <div>
   <div
-    class="css-ffmk6d"
+    class="css-lvnw3k"
     data-testid="drawer"
   >
     <header
@@ -45,7 +45,7 @@ exports[`Drawer it should render properly 1`] = `
       </svg>
     </header>
     <div
-      class="css-ypkpmz"
+      class="css-1tc17gr"
     >
       <div>
         child
