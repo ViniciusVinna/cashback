@@ -1,35 +1,14 @@
-const fetch = require('node-fetch');
+const { client, endpoints } = require('./modules/services');
+const { parseCreatePurchase, parsePurchasesResponse } = require('./modules/parsers');
 
-const { endpoints, urlFormatter } = require('./utils/services');
-
-const { getUser, getPurchases, createPurchases } = endpoints;
-
-exports.handler = async ({ httpMethod, body }, { clientContext }) => {
-  const { user } = clientContext;
-
+exports.handler = async ({ queryStringParameters, httpMethod, body }) => {
   if (httpMethod === 'POST') {
     try {
-      const userResponse = await fetch(urlFormatter(getUser.endpoint, { ...user }), {
-        method: getUser.method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const userData = await userResponse.json();
-
-      const purchases = await fetch(urlFormatter(createPurchases.endpoint, { ...userData[0] }), {
-        method: createPurchases.method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...JSON.parse(body) }),
-      });
-
-      const purchaseData = await purchases.json();
-
+      const purchase = parseCreatePurchase(body);
+      const mockApiResponse = await client(endpoints.createPurchases, { payload: purchase, ...JSON.parse(body) });
       return {
         statusCode: 201,
-        body: JSON.stringify(purchaseData),
+        body: JSON.stringify(mockApiResponse),
       };
     }
     catch (error) {
@@ -39,44 +18,14 @@ exports.handler = async ({ httpMethod, body }, { clientContext }) => {
       };
     }
   }
-
   if (httpMethod === 'GET') {
     try {
-      const userResponse = await fetch(urlFormatter(getUser.endpoint, { ...user }), {
-        method: getUser.method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const userData = await userResponse.json();
-
-      const purchases = await fetch(urlFormatter(getPurchases.endpoint, { ...userData[0] }), {
-        method: getPurchases.method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      const purchaseData = await purchases.json();
-
-      if (purchaseData === 'Not found') {
-        return {
-          statusCode: 200,
-          body: JSON.stringify({
-            cashback: 0,
-            count: 0,
-            purchases: [],
-          }),
-        };
-      }
+      const purchasesMockApiResponse = await client(endpoints.getPurchases, { ...queryStringParameters });
+      const purchases = parsePurchasesResponse(purchasesMockApiResponse);
 
       return {
         statusCode: 200,
-        body: JSON.stringify({
-          cashback: 0,
-          count: 0,
-          purchases: purchaseData,
-        }),
+        body: purchases,
       };
     }
     catch (error) {

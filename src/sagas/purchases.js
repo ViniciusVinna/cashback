@@ -17,9 +17,13 @@ import { STATUS, PurchasesConstants } from 'constants/index';
 
 export function* purchasesCreate({ payload }) {
   try {
+    const { id } = yield getRequestOptions();
     const data = yield call(client, endpoints.purchasesCreate, {
       ...yield getRequestOptions(),
-      payload,
+      payload: {
+        ...payload,
+        id,
+      },
     });
 
     yield put({

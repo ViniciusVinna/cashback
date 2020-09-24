@@ -1,26 +1,13 @@
-const fetch = require('node-fetch');
-
-const { endpoints, urlFormatter } = require('./utils/services');
-const { parseUser } = require('./utils/parsers');
-
-const { getUser, createUser } = endpoints;
+const { client, endpoints } = require('./modules/services');
+const { parseUserResponse } = require('./modules/parsers');
 
 exports.handler = async ({ httpMethod, body }, { clientContext }) => {
   if (httpMethod === 'POST') {
     try {
-      const response = await fetch(urlFormatter(createUser.endpoint), {
-        method: createUser.method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...JSON.parse(body) }),
-      });
-
-      const data = await response.json();
-
+      const mockApiResponse = await client(endpoints.createUser, { payload: body });
       return {
         statusCode: 201,
-        body: JSON.stringify(data),
+        body: JSON.stringify(mockApiResponse),
       };
     }
     catch (error) {
@@ -34,21 +21,12 @@ exports.handler = async ({ httpMethod, body }, { clientContext }) => {
   if (httpMethod === 'GET') {
     try {
       const { identity, user } = clientContext;
-
-      const response = await fetch(urlFormatter(getUser.endpoint, { ...user }), {
-        method: getUser.method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      const data = await response.json();
-
-      const userProfile = parseUser(data, identity);
+      const mockApiResponse = await client(endpoints.getUser, { ...user });
+      const userProfile = parseUserResponse(mockApiResponse, identity);
 
       return {
         statusCode: 200,
-        body: JSON.stringify(userProfile),
+        body: userProfile,
       };
     }
     catch (error) {

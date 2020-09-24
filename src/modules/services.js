@@ -21,7 +21,7 @@ export const resources = {
   },
   purchasesGet: {
     method: 'GET',
-    endpoint: 'purchases',
+    endpoint: 'purchases?id={id}',
   },
 };
 
@@ -32,9 +32,9 @@ export const endpoints = keymirror(resources);
  * @returns {{accessToken: string}}
  */
 export function* getRequestOptions() {
-  const { accessToken } = yield select(state => state.user);
+  const { accessToken, data: { id } } = yield select(state => state.user);
 
-  return { accessToken };
+  return { accessToken, id };
 }
 
 /**
@@ -50,7 +50,7 @@ const getURLWithParams = (endpoint) => {
 };
 
 /**
- * Fetch data from hybris.
+ * Fetch data
  *
  * @param {string} endpoint
  * @param {string} accessToken

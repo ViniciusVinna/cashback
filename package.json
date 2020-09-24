@@ -90,6 +90,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js --ext .jsx src",
     "lint:fix": "yarn lint --fix",
+    "lint:functions": "eslint --ext .js functions",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 9009 -s public",
     "storybook:build": "build-storybook -s public",
