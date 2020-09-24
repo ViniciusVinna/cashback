@@ -1,20 +1,42 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useRef } from 'react';
 import ReactVivus from 'react-vivus';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { useSelector } from 'react-redux';
 
 import defaultImage from 'assets/brands/boticario-light.svg';
 
 import { LoadingStyled } from './Loading.styles';
 
-const { LoadingWrapper } = LoadingStyled;
+const { LoadingWrapper, Status } = LoadingStyled;
 
-const Loading = ({ isLoading }) => {
+const Loading = () => {
+  const { isLoading, isScrollLocked, statusMessage } = useSelector(state => state.app);
+  const loadingRef = useRef(null);
+
+  useEffect(() => {
+    if (isScrollLocked) {
+      disableBodyScroll(loadingRef);
+    }
+
+    return () => {
+      enableBodyScroll(loadingRef);
+    };
+  }, [isScrollLocked]);
+
   const handleAnimation = (myVivus) => {
     myVivus.play(myVivus.getStatus() === 'end' ? -1 : 1);
   };
 
+  /* instanbul ignore else */
+  if (!isLoading) {
+    return null;
+  }
+
   return (
-    <LoadingWrapper isLoading={isLoading} data-testid="Loading">
+    <LoadingWrapper
+      ref={loadingRef}
+      data-testid="Loading"
+    >
       <ReactVivus
         id="loading"
         option={{
@@ -26,12 +48,12 @@ const Loading = ({ isLoading }) => {
         style={{ height: 'auto', width: '100%' }}
         callback={handleAnimation}
       />
+
+      {statusMessage && (
+        <Status>{statusMessage}</Status>
+      )}
     </LoadingWrapper>
   );
-};
-
-Loading.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
 };
 
 export default Loading;

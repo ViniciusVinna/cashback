@@ -18,12 +18,12 @@ export function* jwtLogin({ email, password }) {
   try {
     const { auth } = window;
 
-    const { token: { access_token: authToken } } = yield call(() => new Promise((resolve, reject) => auth
+    const { token: { access_token: accessToken } } = yield call(() => new Promise((resolve, reject) => auth
       .login(email, password)
       .then(resolve, reject)
     ));
 
-    return authToken;
+    return accessToken;
   }
   catch (err) {
     throw new Error(err);

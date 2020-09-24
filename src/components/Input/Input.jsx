@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { BiIdCard } from 'react-icons/bi';
 import {
   FiCalendar,
-  FiDollarSign,
   FiLock,
   FiMail,
   FiTag,
@@ -35,9 +34,6 @@ const Input = forwardRef(({ name, onChangeHandler, ...rest }, ref) => {
   }
   else if (name === 'date') {
     iconOutput = (<FiCalendar />);
-  }
-  else if (name === 'value') {
-    iconOutput = (<FiDollarSign />);
   }
 
   return (

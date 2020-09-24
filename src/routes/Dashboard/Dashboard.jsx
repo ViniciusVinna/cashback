@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { getPurchases } from 'actions';
 
 import Waves from 'components/Waves';
 
@@ -8,9 +11,10 @@ import Dialog from 'containers/Dialog';
 import Drawer from 'containers/Drawer';
 import Profile from 'containers/Profile';
 import Transactions from 'containers/Transactions';
+import Details from 'containers/Transactions/Details';
 import { PurchaseForm } from 'containers/Forms';
 
-import { useDialog, useDrawer } from 'hooks';
+import { useDialog } from 'hooks';
 
 import SignInStyled from './Dashboard.styled';
 
@@ -23,9 +27,13 @@ const {
 
 const Dashboard = () => {
   const [isDialogVisible, setDialogVisibility, toggleDialog] = useDialog(false);
-  const [isDrawerVisible, setDrawerVisibility] = useDrawer();
   const [purchaseHeight, setPurchaseHeight] = useState('0px');
   const addPurchaseRef = useRef(null);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPurchases());
+  }, [dispatch]);
 
   useEffect(() => {
     const height = addPurchaseRef?.current?.offsetHeight || 0;
@@ -69,12 +77,8 @@ const Dashboard = () => {
         <PurchaseForm />
       </Dialog>
 
-      <Drawer
-        isVisible={isDrawerVisible}
-        onCloseHandler={() => setDrawerVisibility(false)}
-        title="Informações de compra"
-      >
-        <p>Informações de compra</p>
+      <Drawer title="Detalhes da Compra">
+        <Details />
       </Drawer>
     </DashboardPage>
   );

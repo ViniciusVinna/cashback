@@ -16,4 +16,5 @@ export const PurchasesConstants = keymirror({
   PURCHASES_CREATE_REQUEST: undefined,
   PURCHASES_CREATE_SUCCESS: undefined,
   PURCHASES_CREATE_FAILURE: undefined,
+  SET_DETAILS: undefined,
 });

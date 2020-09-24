@@ -9,7 +9,7 @@ export const DrawerStyled = {
     cursor: pointer;
     font-size: ${theme.iconSize.m};
   `),
-  DrawerWrapper: styled('div')(({ theme, isVisible }) => css`
+  DrawerWrapper: styled('div')(({ theme, isOpen }) => css`
     backface-visibility: hidden;
     background-color: ${theme.color.n200};
     box-shadow: ${theme.boxShadow.modal};
@@ -20,15 +20,16 @@ export const DrawerStyled = {
     position: fixed;
     right: 0;
     top: 0;
-    transform: ${isVisible ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${isOpen ? 'translateX(0)' : 'translateX(100%)'};
     transition: ${theme.transition.bezier};
     width: 100%;
     z-index: ${theme.zIndex.drawer};
   `),
-  Header: styled('header')`
+  Header: styled('header')(({ theme }) => css`
     top: 0;
     width: 100%;
-  `,
+    margin-bottom: -${theme.space.xl};
+  `),
   HeaderContainer: styled('header')(({ theme }) => css`
     align-items: center;
     background-color: ${theme.color.g500};
@@ -57,18 +58,18 @@ export const DrawerStyled = {
       margin-bottom: ${theme.space.xl};
     }
   `),
-  Overlay: styled('div')(({ theme, isVisible }) => css`
+  Overlay: styled('div')(({ theme, isOpen }) => css`
     backface-visibility: hidden;
     background-color: ${theme.color.shadow};
     bottom: 0;
     left: 0;
-    opacity: ${isVisible ? 0.4 : 0};
+    opacity: ${isOpen ? 0.4 : 0};
     overflow: hidden;
     position: fixed;
     right: 0;
     top: 0;
     transition: ${theme.transition.bezier};
-    visibility: ${isVisible ? 'visible' : 'hidden'};
+    visibility: ${isOpen ? 'visible' : 'hidden'};
     z-index: ${theme.zIndex.overlay};
   `),
 };

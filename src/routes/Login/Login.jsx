@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { toggleDrawer } from 'actions';
 
 import Button from 'components/Button';
 import Heading from 'components/Heading';
@@ -7,8 +10,6 @@ import Waves from 'components/Waves';
 
 import Drawer from 'containers/Drawer';
 import { LoginForm, SigninForm } from 'containers/Forms';
-
-import { useDrawer } from 'hooks';
 
 import LoginStyled from './Login.styled';
 
@@ -22,10 +23,10 @@ const {
 } = LoginStyled;
 
 const Login = () => {
-  const [isVisible, setVisibility] = useDrawer();
+  const dispatch = useDispatch();
 
-  const handleClose = () => {
-    setVisibility(false);
+  const handleOpenDrawer = () => {
+    dispatch(toggleDrawer(true));
   };
 
   return (
@@ -44,7 +45,7 @@ const Login = () => {
 
           <Button
             variation="secondary"
-            onClick={() => setVisibility(true)}
+            onClick={handleOpenDrawer}
           >
             Criar conta
           </Button>
@@ -58,12 +59,11 @@ const Login = () => {
       </ContentGroup>
 
       <Drawer
-        isVisible={isVisible}
         extraPadding={true}
-        onClose={handleClose}
         title="Criar conta"
       >
         <p>Cadastre-se e comece a ganhar cashback a partir de suas próximas compras!</p>
+
         <SigninForm />
       </Drawer>
     </LoginPage>

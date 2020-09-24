@@ -7,10 +7,6 @@ import { request } from 'modules/client';
 import config from 'config';
 
 export const resources = {
-  userCashbackGet: {
-    method: 'POST',
-    endpoint: 'user-cashback',
-  },
   userCreate: {
     method: 'POST',
     endpoint: 'users',
@@ -19,13 +15,13 @@ export const resources = {
     method: 'GET',
     endpoint: 'users',
   },
-  purchaseCreate: {
+  purchasesCreate: {
     method: 'POST',
-    endpoint: 'purchases-create',
+    endpoint: 'purchases',
   },
-  purchaseDelete: {
-    method: 'POST',
-    endpoint: 'purchases-delete',
+  purchasesGet: {
+    method: 'GET',
+    endpoint: 'purchases',
   },
 };
 
@@ -33,12 +29,12 @@ export const endpoints = keymirror(resources);
 
 /**
  * Get request options from the store
- * @returns {{authToken: string}}
+ * @returns {{accessToken: string}}
  */
 export function* getRequestOptions() {
-  const { authToken } = yield select(state => state.app);
+  const { accessToken } = yield select(state => state.user);
 
-  return { authToken };
+  return { accessToken };
 }
 
 /**
@@ -57,7 +53,7 @@ const getURLWithParams = (endpoint) => {
  * Fetch data from hybris.
  *
  * @param {string} endpoint
- * @param {string} authToken
+ * @param {string} accessToken
  * @param {Object} [headers]
  * @param {Object} [payload]
  * @param {Object} [type]
@@ -65,13 +61,13 @@ const getURLWithParams = (endpoint) => {
  *
  * @returns {Promise<Object>}
  */
-export async function client(endpoint, { authToken, headers, payload, type, ...rest }) {
+export async function client(endpoint, { accessToken, headers, payload, type, ...rest }) {
   const resource = resources[endpoint];
 
   return request({
     url: format(getURLWithParams(resource.endpoint), { ...rest }),
     headers: {
-      Authorization: `Bearer ${authToken}`,
+      Authorization: `Bearer ${accessToken}`,
       'Content-Type': 'application/json',
       ...headers,
     },

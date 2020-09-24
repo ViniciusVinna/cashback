@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 import Heading from 'components/Heading';
 import Logo from 'components/Logo';
@@ -10,31 +10,25 @@ import { ProfileStyled } from './Profile.styles';
 
 const { Avatar, ProfileBrand, ProfileWrapper, Username } = ProfileStyled;
 
-const Profile = ({ userImg, username }) => (
-  <ProfileWrapper data-testid="profile">
-    <ProfileBrand>
-      <Logo type="sign" />
-    </ProfileBrand>
-    <Username>
-      <Heading level="h6">
-        {username}
-      </Heading>
-    </Username>
+const Profile = () => {
+  const { data: { firstname = '' } } = useSelector(state => state.user);
 
-    <Avatar>
-      <img src={userImg} alt="Imagem de perfil" />
-    </Avatar>
-  </ProfileWrapper>
-);
+  return (
+    <ProfileWrapper data-testid="profile">
+      <ProfileBrand>
+        <Logo type="sign" />
+      </ProfileBrand>
+      <Username>
+        <Heading level="h6">
+          {firstname}
+        </Heading>
+      </Username>
 
-Profile.propTypes = {
-  userImg: PropTypes.string,
-  username: PropTypes.string,
-};
-
-Profile.defaultProps = {
-  userImg: defaultImage,
-  username: 'Vinícius Ribeiro',
+      <Avatar>
+        <img src={defaultImage} alt="Imagem de perfil" />
+      </Avatar>
+    </ProfileWrapper>
+  );
 };
 
 export default Profile;

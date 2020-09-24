@@ -7,9 +7,10 @@ export * from './purchases';
 export * from './user';
 
 export const STATUS = {
-  IDLE: 'idle',
-  RUNNING: 'running',
-  READY: 'ready',
-  SUCCESS: 'success',
   ERROR: 'error',
+  IDLE: 'idle',
+  READY: 'ready',
+  RUNNING: 'running',
+  SUCCESS: 'success',
+  UPDATE: 'update',
 };

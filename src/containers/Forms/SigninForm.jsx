@@ -17,7 +17,7 @@ const { Error, Form, Label } = StyledForm;
 export const SigninForm = () => {
   const [cpf, setCPF] = useState('');
   const dispatch = useDispatch();
-  const { errors, handleSubmit, register } = useForm({
+  const { errors, handleSubmit, register, reset } = useForm({
     resolver: yupResolver(signinSchema),
   });
 
@@ -36,10 +36,13 @@ export const SigninForm = () => {
 
   const onSubmitHandler = (data) => {
     dispatch(createUser(data));
+
+    reset();
+    setCPF('');
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmitHandler)} noBorder={true}>
+    <Form onSubmit={handleSubmit(onSubmitHandler)} noBorder noMargin>
       <Label htmlFor="username">Nome Completo</Label>
       <Input
         hasError={!!errors.username}

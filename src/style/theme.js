@@ -59,6 +59,7 @@ const darkColors = {
 
 const semanticColors = {
   danger: reds.r500,
+  info: oranges.b500,
   success: greens.g500,
   warning: oranges.o500,
 };
@@ -256,7 +257,6 @@ const light = {
     ...applicationColors,
     ...black,
     ...blues,
-    ...blur,
     ...darkColors,
     ...greens,
     ...neutrals,
@@ -264,6 +264,7 @@ const light = {
     ...reds,
     ...semanticColors,
   },
+  blur: { ...blur },
   font: { ...font },
   fontWeight: { ...fontWeight },
   iconSize: { ...iconSizes },

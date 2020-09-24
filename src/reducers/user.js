@@ -20,6 +20,26 @@ const userState = {
 
 export default {
   user: handleActions({
+    [UserConstants.USER_CREATE_REQUEST]: (state) => produce(state, draft => {
+      draft.create = {
+        data: {},
+        message: '',
+        status: STATUS.RUNNING,
+      };
+    }),
+    [UserConstants.USER_CREATE_SUCCESS]: (state, { payload }) => produce(state, draft => {
+      draft.create = {
+        data: payload,
+        status: STATUS.SUCCESS,
+      };
+    }),
+    [UserConstants.USER_CREATE_FAILURE]: (state, { payload: { message } }) => produce(state, draft => {
+      draft.create = {
+        data: {},
+        message,
+        status: STATUS.ERROR,
+      };
+    }),
     [UserConstants.USER_FETCH_REQUEST]: (state) => produce(state, draft => {
       draft.accessToken = '';
       draft.data = {};
@@ -38,25 +58,6 @@ export default {
     }),
     [UserConstants.USER_FETCH_FAILURE]: (state, { payload: { message } }) => produce(state, draft => {
       draft.fetch = {
-        message,
-        status: STATUS.ERROR,
-      };
-    }),
-    [UserConstants.USER_CREATE_REQUEST]: (state) => produce(state, draft => {
-      draft.create = {
-        message: '',
-        status: STATUS.RUNNING,
-      };
-    }),
-    [UserConstants.USER_CREATE_SUCCESS]: (state, { payload }) => produce(state, draft => {
-      draft.create = {
-        data: payload,
-        message: '',
-        status: STATUS.SUCCESS,
-      };
-    }),
-    [UserConstants.USER_CREATE_FAILURE]: (state, { payload: { message } }) => produce(state, draft => {
-      draft.create = {
         message,
         status: STATUS.ERROR,
       };

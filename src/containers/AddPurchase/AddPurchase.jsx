@@ -14,12 +14,11 @@ const {
 
 const AddPurchase = forwardRef(({ onClickHandler }, ref) => (
   <AddPurchaseWidget
-    onClick={onClickHandler}
     ref={ref}
     data-testid="add-purchase"
   >
     <PurchaseButtonWrapper>
-      <PurchaseButton>
+      <PurchaseButton onClick={onClickHandler}>
         <FiPlus />
         <Ripple />
       </PurchaseButton>

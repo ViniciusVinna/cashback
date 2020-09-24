@@ -1,13 +1,11 @@
 import React from 'react';
 
-import profileFallbackImage from 'assets/avatars/avatar-1.svg';
+import Loading from './Loading';
 
-import Profile from './Profile';
-
-describe('Profile', () => {
+describe('Loading', () => {
   it('it should render properly', () => {
     const { container } = render(
-      <Profile userImg={profileFallbackImage} username="Vinícius Ribeiro" />
+      <Loading />
     );
     expect(container).toMatchSnapshot();
   });

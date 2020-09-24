@@ -1,50 +1,44 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+
+import { formatCurrency } from 'modules';
 
 import { BalanceStyled } from './Balance.styled';
 
 const {
   BalanceWidget,
   Header,
-  Title,
-  Label,
-  Value,
   Info,
   Item,
   ItemValue,
+  Label,
+  Title,
+  Value,
 } = BalanceStyled;
 
-const Balance = ({ balance, approved, pending }) => (
-  <BalanceWidget data-testid="balance">
-    <Header>
-      <Title>Saldo</Title>
-      <Value>{balance}</Value>
-    </Header>
+const Balance = () => {
+  const { balance, validation } = useSelector(state => state.purchases);
 
-    <Info>
-      <Item>
-        <Label>Aprovado</Label>
-        <ItemValue>{approved}</ItemValue>
-      </Item>
+  return (
+    <BalanceWidget data-testid="balance">
+      <Header>
+        <Title>Saldo</Title>
+        <Value>{formatCurrency(balance)}</Value>
+      </Header>
 
-      <Item>
-        <Label>Pendente</Label>
-        <ItemValue>{pending}</ItemValue>
-      </Item>
-    </Info>
-  </BalanceWidget>
-);
+      <Info>
+        <Item>
+          <Label>Em validação</Label>
+          <ItemValue>{formatCurrency(validation)}</ItemValue>
+        </Item>
 
-Balance.propTypes = {
-  approved: PropTypes.string,
-  balance: PropTypes.string,
-  pending: PropTypes.string,
-};
-
-Balance.defaultProps = {
-  approved: 'R$ 400,00',
-  balance: 'R$ 245,00',
-  pending: 'R$ 75,00',
+        {/* <Item>
+          <Label>Pendente</Label>
+          <ItemValue>validation</ItemValue>
+        </Item> */}
+      </Info>
+    </BalanceWidget>
+  );
 };
 
 export default Balance;

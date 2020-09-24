@@ -1,5 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { toggleDrawer } from 'actions';
 
 import Heading from 'components/Heading';
 import Waves from 'components/Waves';
@@ -15,34 +18,41 @@ const {
   Overlay,
 } = DrawerStyled;
 
-const Drawer = ({ children, extraPadding, isVisible, onClose, title }) => (
-  <Fragment>
-    <DrawerWrapper isVisible={isVisible} data-testid="drawer">
-      <Header>
-        <HeaderContainer>
-          <BackIcon data-testid="close-drawer" onClick={onClose} />
-          <Heading level="h4">{title}</Heading>
-        </HeaderContainer>
-        <Waves />
-      </Header>
+const Drawer = ({ children, extraPadding, title }) => {
+  const { isDrawerOpen } = useSelector(state => state.app);
+  const dispatch = useDispatch();
 
-      <Content extraPadding={extraPadding}>
-        {children}
-      </Content>
-    </DrawerWrapper>
+  const handleClose = () => {
+    dispatch(toggleDrawer(false));
+  };
 
-    <Overlay
-      onClick={onClose}
-      isVisible={isVisible}
-    />
-  </Fragment>
-);
+  return (
+    <Fragment>
+      <DrawerWrapper isOpen={isDrawerOpen} data-testid="drawer">
+        <Header>
+          <HeaderContainer>
+            <BackIcon data-testid="close-drawer" onClick={handleClose} />
+            <Heading level="h4">{title}</Heading>
+          </HeaderContainer>
+          <Waves />
+        </Header>
+
+        <Content extraPadding={extraPadding}>
+          {children}
+        </Content>
+      </DrawerWrapper>
+
+      <Overlay
+        onClick={handleClose}
+        isOpen={isDrawerOpen}
+      />
+    </Fragment>
+  );
+};
 
 Drawer.propTypes = {
   children: PropTypes.node.isRequired,
   extraPadding: PropTypes.bool,
-  isVisible: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
 };
 

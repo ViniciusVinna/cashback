@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 
 export const ProfileStyled = {
   Avatar: styled('figure')(({ theme }) => css`
-    border-radius: 50px;
+    border-radius: ${theme.borderRadius.xl};
     height: ${theme.iconSize.l};
     margin: 0;
     overflow: hidden;
