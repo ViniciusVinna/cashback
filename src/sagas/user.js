@@ -4,7 +4,7 @@
  */
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 
-import { push } from 'actions';
+import { push, showAlert } from 'actions';
 
 import {
   client,
@@ -12,13 +12,14 @@ import {
   parseResponseError,
 } from 'modules';
 
-import { UserConstants } from 'constants/index';
+import { STATUS, UserConstants } from 'constants/index';
 import { jwtLogin, jwtSignin } from './side-effects';
 
 export function* userGet({ payload }) {
   try {
-    const authToken = yield jwtLogin(payload);
-    const data = yield call(client, endpoints.userGet, { authToken });
+    const accessToken = yield jwtLogin(payload);
+
+    const data = yield call(client, endpoints.userGet, { accessToken });
 
     yield put({
       type: UserConstants.USER_FETCH_SUCCESS,
@@ -32,6 +33,8 @@ export function* userGet({ payload }) {
       type: UserConstants.USER_FETCH_FAILURE,
       payload: { message: parseResponseError(message, status), status },
     });
+
+    yield put(showAlert(message, { status: STATUS.ERROR }));
   }
 }
 
@@ -40,6 +43,8 @@ export function* userCreate({ payload }) {
     yield jwtSignin(payload);
 
     const data = yield call(client, endpoints.userCreate, { payload });
+
+    yield put(showAlert('Conta criada com sucesso! Faça login para continuar.', { status: STATUS.SUCCESS }));
 
     yield put({
       type: UserConstants.USER_CREATE_SUCCESS,
@@ -51,6 +56,8 @@ export function* userCreate({ payload }) {
       type: UserConstants.USER_CREATE_FAILURE,
       payload: { message: parseResponseError(message, status), status },
     });
+
+    yield put(showAlert(parseResponseError(message), { status: STATUS.ERROR }));
   }
 }
 
