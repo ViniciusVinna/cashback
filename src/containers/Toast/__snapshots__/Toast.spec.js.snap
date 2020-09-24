@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast Component it should render properly 1`] = `
+<div>
+  <div
+    class="css-mj4rha"
+    data-testid="toast"
+  >
+    <div
+      class="css-1kc6v58"
+    >
+      <div
+        class="css-1obobd9"
+      >
+        <div
+          class="Toastify"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
