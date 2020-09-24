@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 const { endpoints, urlFormatter } = require('./utils/services');
-const { parseUserProfile } = require('./utils/parsers');
+const { parseUser } = require('./utils/parsers');
 
 const { getUser, createUser } = endpoints;
 
@@ -41,11 +41,13 @@ exports.handler = async ({ httpMethod, body }, { clientContext }) => {
           'Content-Type': 'application/json',
         },
       });
+
       const data = await response.json();
-      const userProfile = parseUserProfile(data, identity);
+
+      const userProfile = parseUser(data, identity);
 
       return {
-        statusCode: 201,
+        statusCode: 200,
         body: JSON.stringify(userProfile),
       };
     }

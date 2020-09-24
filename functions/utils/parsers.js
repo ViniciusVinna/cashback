@@ -3,18 +3,7 @@
  * @module Parsers
  */
 
-/**
- * Parse user profile
- * @param {Object} data
- *
- * @returns {{
-  * accessToken: {string},
-  * cpf: {string},
-  * email: {string},
-  * username: {string},
-  * }}
-  */
-const parseUserProfile = (data, { token }) => {
+const parseUser = (data, { token = '' }) => {
   const user = data[0] || {};
 
   return {
@@ -27,5 +16,5 @@ const parseUserProfile = (data, { token }) => {
 };
 
 module.exports = {
-  parseUserProfile,
+  parseUser,
 };
