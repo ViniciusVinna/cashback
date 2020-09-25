@@ -2,7 +2,7 @@
  * @module Constants/App
  * @desc App Constants
  */
-import { keymirror } from 'modules';
+import { keymirror } from 'modules/keymirror';
 
 /**
  * @constant {Object} AppConstants
@@ -10,7 +10,8 @@ import { keymirror } from 'modules';
  */
 export const AppConstants = keymirror({
   HIDE_ALERT: undefined,
+  SET_DIALOG_VISIBILITY: undefined,
+  SET_DRAWER_VISIBILITY: undefined,
   SET_SCREEN_SIZE: undefined,
   SHOW_ALERT: undefined,
-  SET_DRAWER_VISIBILITY: undefined,
 });

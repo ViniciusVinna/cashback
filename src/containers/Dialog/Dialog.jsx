@@ -1,6 +1,9 @@
 import React, { Fragment, useRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { toggleDialog } from 'actions';
 
 import Portal from 'components/Portal';
 import Waves from 'components/Waves';
@@ -18,44 +21,48 @@ const {
 
 const Dialog = ({
   children,
-  onCloseHandler,
-  isVisible,
   renderComponent,
   title,
 }) => {
+  const { isDialogOpen, isScrollLocked } = useSelector(state => state.app);
+  const dispatch = useDispatch();
   const dialogRef = useRef(null);
+
+  const handleClose = useCallback(() => {
+    dispatch(toggleDialog(false));
+  }, [dispatch]);
 
   const handleKeyUp = useCallback((e) => {
     /* istanbul ignore else */
     if (e.keyCode === 27) {
-      onCloseHandler();
+      handleClose();
     }
-  }, [onCloseHandler]);
+  }, [handleClose]);
 
   useEffect(() => {
     /* istanbul ignore else */
-    if (isVisible) {
+    if (isDialogOpen) {
       document.addEventListener('keyup', handleKeyUp);
     }
 
     return () => {
       document.removeEventListener('keyup', handleKeyUp);
     };
-  }, [onCloseHandler, handleKeyUp, isVisible]);
+  }, [handleKeyUp, isDialogOpen]);
 
   useEffect(() => {
-    if (isVisible) {
+    if (isScrollLocked) {
       disableBodyScroll(dialogRef);
     }
 
     return () => {
       enableBodyScroll(dialogRef);
     };
-  }, [isVisible]);
+  }, [isScrollLocked]);
 
   return (
     <Fragment>
-      {isVisible && (
+      {isDialogOpen && (
         <Portal id="dialog">
           <DialogWrapper
             data-testid="dialog"
@@ -65,7 +72,7 @@ const Dialog = ({
             <DialogHeader>
               <DialogTitle>{title}</DialogTitle>
 
-              <DialogClose data-testid="dialog-close" onClick={onCloseHandler} />
+              <DialogClose data-testid="dialog-close" onClick={handleClose} />
             </DialogHeader>
             <Waves color="#3388FF" />
 
@@ -76,7 +83,7 @@ const Dialog = ({
         </Portal>
       )}
 
-      {isVisible && (<DialogOverlay onClick={onCloseHandler} />)}
+      {isDialogOpen && (<DialogOverlay onClick={handleClose} />)}
 
       {renderComponent && renderComponent}
     </Fragment>
@@ -85,8 +92,6 @@ const Dialog = ({
 
 Dialog.propTypes = {
   children: PropTypes.node.isRequired,
-  isVisible: PropTypes.bool.isRequired,
-  onCloseHandler: PropTypes.func.isRequired,
   renderComponent: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
 };

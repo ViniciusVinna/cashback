@@ -2,6 +2,9 @@
 
 exports[`Dialog interactions should end the dialog when click on the close button 1`] = `
 <div>
+  <div
+    class="css-1l3chg2"
+  />
   <div>
     Trigger Component
   </div>
@@ -10,6 +13,9 @@ exports[`Dialog interactions should end the dialog when click on the close butto
 
 exports[`Dialog interactions should end the dialog when esc key is pressed 1`] = `
 <div>
+  <div
+    class="css-1l3chg2"
+  />
   <div>
     Trigger Component
   </div>
@@ -18,6 +24,9 @@ exports[`Dialog interactions should end the dialog when esc key is pressed 1`] =
 
 exports[`Dialog no interactions should render properly 1`] = `
 <div>
+  <div
+    class="css-1l3chg2"
+  />
   <div>
     Trigger Component
   </div>
