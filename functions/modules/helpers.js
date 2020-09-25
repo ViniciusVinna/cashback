@@ -1,11 +1,16 @@
 const is =  require('is-lite');
+const dayjs = require('dayjs');
 
 /**
  * Strips all non-digit characters of the given string
  * @param {string} value
  * @returns {string}
  */
-const clearNumber = (value) => value.replace(/\D+/g, '');
+const clearNumber = (value) => {
+  const cleared = value.toString();
+
+  return cleared.replace(/\D+/g, '');
+};
 
 /**
  * Parse error object
@@ -38,7 +43,19 @@ const parseErrorObject = (data) => {
   return output;
 };
 
+const sortObject = (obj) => Object.keys(obj)
+  .sort()
+  .reduce((result, key) => {
+    result[key] = obj[key];
+
+    return result;
+  }, {});
+
+const getTimestamp = (date) => dayjs(date).valueOf();
+
 module.exports = {
   clearNumber,
   parseErrorObject,
+  sortObject,
+  getTimestamp,
 };

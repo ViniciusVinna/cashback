@@ -36,7 +36,7 @@ const getCashbackValue = (value, percentage) => value * percentage;
 const getCashbackBalance = (purchases) => purchases.reduce((acc, { status, cashback }) => {
   if (status === CASHBACK_STATUS.APPROVED) {
     // eslint-disable-next-line no-param-reassign
-    acc += cashback;
+    acc += +cashback;
   }
   return acc;
 }, 0);
@@ -44,22 +44,29 @@ const getCashbackBalance = (purchases) => purchases.reduce((acc, { status, cashb
 const getValidatingCashback = (purchases) => purchases.reduce((acc, { status, cashback }) => {
   if (status === CASHBACK_STATUS.VALIDATING) {
     // eslint-disable-next-line no-param-reassign
-    acc += cashback;
+    acc += +cashback;
   }
   return acc;
 }, 0);
 
-const groupPurchasesByDate = (response) => response.reduce((acc, purchase) => {
-  if (!acc[purchase['date']]) {
-    acc[purchase['date']] = [purchase];
+const groupPurchasesByDate = (response) => response
+  .slice()
+  .sort((a, b) => {
+    if (a.date > b.date) return -1;
+    if (a.date < b.date) return 1;
+    return 0;
+  })
+  .reduce((acc, purchase) => {
+    if (!acc[purchase['date']]) {
+      acc[purchase['date']] = [purchase];
+
+      return acc;
+    }
+
+    acc[purchase['date']] = [...acc[purchase['date']], purchase];
 
     return acc;
-  }
-
-  acc[purchase['date']] = [...acc[purchase['date']], purchase];
-
-  return acc;
-}, {});
+  }, {});
 
 module.exports = {
   RULES,
