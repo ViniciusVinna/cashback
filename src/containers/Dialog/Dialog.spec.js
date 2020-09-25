@@ -1,38 +1,60 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import Dialog from './Dialog';
 
+let mockStore = {
+  app: {
+    screenSize: '',
+    isDialogOpen: false,
+    isScrollLocked: false,
+  },
+  purchases: {},
+  user: {},
+};
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn(),
+}));
+
 const props = {
-  children: 'Something',
-  isVisible: true,
-  onCloseHandler: () => {},
-  onConfirmHandler: () => {},
   renderComponent: <div>Trigger Component</div>,
   title: 'Something title',
 };
 
 describe('Dialog', () => {
-  describe('no interactions', () => {
-    it('should render properly', () => {
-      const { container } = render(
-        <Dialog {...props}>
-          You are my father
-        </Dialog>
-      );
-      expect(container).toMatchSnapshot();
-    });
+  beforeEach(() => {
+    useSelector.mockImplementation(callback => callback(mockStore));
+  });
 
-    it('it should render child properly', () => {
-      const { getByText } = render(
-        <Dialog {...props}>
-          You are my father
-        </Dialog>
-      );
-      expect(getByText('You are my father')).toBeDefined();
-      expect(getByText('Something title')).toBeDefined();
+  afterEach(() => {
+    useSelector.mockClear();
+  });
+
+  describe('Dialog', () => {
+    it('should render just the trigger component of dialog ', () => {
+      const { container } = render(<Dialog {...props}>Child</Dialog>);
+      expect(container).toMatchSnapshot();
     });
   });
 
-  describe('interactions', () => {
+  describe('Dialog', () => {
+    it('should render the dialog and its content ', () => {
+      mockStore = {
+        ...mockStore,
+        app: {
+          isDialogOpen: true,
+          isScrollLocked: true,
+        },
+      };
+
+      const { getByText } = setupRender(<Dialog {...props}>Child</Dialog>, 'dialog');
+
+      expect(getByText('Something title')).toBeDefined();
+      expect(getByText('Child')).toBeDefined();
+    });
+
     it('should end the dialog when click on the close button', () => {
       const { container, getByTestId } = setupRender(<Dialog {...props}>Child</Dialog>, 'dialog');
 

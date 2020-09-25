@@ -99,7 +99,7 @@ const Transactions = () => {
               </Transaction>
             ))}
           </TransactionsGroup>
-        </Fragment> 
+        </Fragment>
       ))}
     </TransactionsWrapper>
   );

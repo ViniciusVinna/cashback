@@ -8,7 +8,7 @@ import { routerMiddleware } from 'connected-react-router';
 import { history } from 'modules';
 
 import rootSagas from 'sagas';
-import reducers from 'reducers';
+import rootReducers from 'reducers';
 
 const { NODE_ENV } = process.env;
 
@@ -23,7 +23,7 @@ const persistConfig = {
 
 const reducer = persistReducer(
   persistConfig,
-  reducers(history),
+  rootReducers(history),
 );
 
 const middleware = [

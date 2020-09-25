@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dialog interactions should end the dialog when click on the close button 1`] = `
+exports[`Dialog Dialog should end the dialog when click on the close button 1`] = `
 <div>
   <div
-    class="css-1l3chg2"
+    class="css-acd6ac"
   />
   <div>
     Trigger Component
@@ -11,10 +11,10 @@ exports[`Dialog interactions should end the dialog when click on the close butto
 </div>
 `;
 
-exports[`Dialog interactions should end the dialog when esc key is pressed 1`] = `
+exports[`Dialog Dialog should end the dialog when esc key is pressed 1`] = `
 <div>
   <div
-    class="css-1l3chg2"
+    class="css-acd6ac"
   />
   <div>
     Trigger Component
@@ -22,11 +22,8 @@ exports[`Dialog interactions should end the dialog when esc key is pressed 1`] =
 </div>
 `;
 
-exports[`Dialog no interactions should render properly 1`] = `
+exports[`Dialog Dialog should render just the trigger component of dialog  1`] = `
 <div>
-  <div
-    class="css-1l3chg2"
-  />
   <div>
     Trigger Component
   </div>

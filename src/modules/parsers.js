@@ -1,6 +1,7 @@
 import { CASHBACK_STATUS } from 'constants/index';
 
-import { getDate, formatCurrency } from 'modules';
+import { getDate } from 'modules/date';
+import { formatCurrency } from 'modules/formatters';
 
 export const detailsParser = (details) => ({
   code: details.code,

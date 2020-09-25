@@ -1,8 +1,30 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import Transactions from './Transactions';
 import Details from './Details';
 
+import transactionsMock from './__mocks__/transactions.json';
+
+const mockStore = {
+  app: {},
+  purchases: transactionsMock,
+};
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn(),
+}));
+
 describe('Transactions', () => {
+  beforeEach(() => {
+    useSelector.mockImplementation(callback => callback(mockStore));
+  });
+
+  afterEach(() => {
+    useSelector.mockClear();
+  });
+
   describe('List without interactions', () => {
     it('it should render properly', () => {
       const { container } = render(
@@ -14,12 +36,8 @@ describe('Transactions', () => {
 
   describe('List item itenteractions', () => {
     it('it should activate the list item when click', () => {
-      const { container, getByTestId, getByText } = setupRender(<Transactions />, 'transactions');
-      fireEvent.click(getByText('123456789'));
-
-      fireEvent.click(getByTestId('close-drawer'));
-
-      fireEvent.click(getByText('123456789'));
+      const { container, getByText } = setupRender(<Transactions />, 'transactions');
+      fireEvent.click(getByText('123131231'));
 
       expect(container).toMatchSnapshot();
     });
@@ -27,41 +45,7 @@ describe('Transactions', () => {
 
   describe('Transaction Detail', () => {
     it('it should render properly with all props', () => {
-      const details = {
-        id: '1',
-        code: '123456',
-        value: 'R$ 25,00',
-        date: '1600623109000',
-        time: '1600623109000',
-        status: 'APROVADO',
-        cashback: 'R$ 5,00',
-        percentage: '2%',
-        reason: 'Status aprovado pelo valor da compra',
-      };
-
-      const { container } = render(
-        <Details details={details} />
-      );
-      expect(container).toMatchSnapshot();
-    });
-
-    it('it should render properly with nullish props', () => {
-      const details = {
-        id: '1',
-        code: '123456',
-        value: 'R$ 25,00',
-        date: '1600623109000',
-        time: '1600623109000',
-        status: 'APROVADO',
-        cashback: 'R$ 5,00',
-        percentage: '2%',
-        reason: 'Status aprovado pelo valor da compra',
-        noEntryProp: 'noEntryProp',
-      };
-
-      const { container } = render(
-        <Details details={details} />
-      );
+      const { container } = render(<Details />);
       expect(container).toMatchSnapshot();
     });
   });

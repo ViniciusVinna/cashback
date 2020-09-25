@@ -3,11 +3,11 @@
 exports[`App it should render properly 1`] = `
 <div>
   <section
-    class="css-p33yw0"
+    class="css-o1hy9p"
     data-testid="signin"
   >
     <div
-      class="css-1budew8"
+      class="css-ykwv9v"
     >
       <header
         class="css-1u3mszz"
@@ -27,6 +27,7 @@ exports[`App it should render properly 1`] = `
           </div>
         </div>
         <svg
+          preserveAspectRatio="none"
           viewBox="0 0 1440 320"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -38,7 +39,7 @@ exports[`App it should render properly 1`] = `
         </svg>
       </header>
       <div
-        class="css-mgu7u"
+        class="css-1sadgop"
       >
         <h3
           class="css-1j6gc3q"
@@ -46,7 +47,7 @@ exports[`App it should render properly 1`] = `
           Login
         </h3>
         <form
-          class="css-1ywmfgl"
+          class="css-nda95f"
           data-testid="login-form"
         >
           <label
@@ -80,6 +81,7 @@ exports[`App it should render properly 1`] = `
               class="css-1gdjj4x"
               name="email"
               placeholder="digite seu email..."
+              value=""
             />
           </div>
           <label
@@ -119,6 +121,7 @@ exports[`App it should render properly 1`] = `
               name="password"
               placeholder="digite sua senha..."
               type="password"
+              value=""
             />
           </div>
           <button
@@ -160,13 +163,13 @@ exports[`App it should render properly 1`] = `
       </div>
     </div>
     <div
-      class="css-celd7p"
+      class="css-1r115av"
       data-testid="drawer"
     >
       <header
-        class="css-k5577l"
+        class="css-1lir5aa"
       >
-        <header
+        <div
           class="css-16zn5ys"
         >
           <svg
@@ -189,26 +192,27 @@ exports[`App it should render properly 1`] = `
           >
             Criar conta
           </h4>
-        </header>
-        <svg
-          viewBox="0 0 1440 320"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0,32L60,58.7C120,85,240,139,360,144C480,149,600,107,720,80C840,53,960,43,1080,74.7C1200,107,1320,181,1380,218.7L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-            fill="#52b947"
-            fill-opacity="1"
-          />
-        </svg>
+        </div>
       </header>
+      <svg
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 320"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,32L60,58.7C120,85,240,139,360,144C480,149,600,107,720,80C840,53,960,43,1080,74.7C1200,107,1320,181,1380,218.7L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+          fill="#52b947"
+          fill-opacity="1"
+        />
+      </svg>
       <div
-        class="css-ypkpmz"
+        class="css-zugj5t"
       >
         <p>
           Cadastre-se e comece a ganhar cashback a partir de suas próximas compras!
         </p>
         <form
-          class="css-3mxqed"
+          class="css-3r8ze0"
         >
           <label
             class="css-13tv2p4"
@@ -371,8 +375,24 @@ exports[`App it should render properly 1`] = `
       </div>
     </div>
     <div
-      class="css-ww0bbz"
+      class="css-a6js6f"
     />
   </section>
+  <div
+    class="css-1cr6320"
+    data-testid="toast"
+  >
+    <div
+      class="css-m7k8lo"
+    >
+      <div
+        class="css-1obobd9"
+      >
+        <div
+          class="Toastify"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;

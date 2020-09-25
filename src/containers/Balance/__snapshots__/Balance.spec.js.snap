@@ -3,7 +3,7 @@
 exports[`Balance it should render properly 1`] = `
 <div>
   <div
-    class="css-1dx82la"
+    class="css-owkyc5"
     data-testid="balance"
   >
     <header
@@ -12,12 +12,12 @@ exports[`Balance it should render properly 1`] = `
       <label
         class="css-1miv8ke"
       >
-        Saldo
+        Saldo disponível
       </label>
       <div
         class="css-111w3cr"
       >
-        R$ 450,00
+        R$ 0,00
       </div>
     </header>
     <div
@@ -29,26 +29,15 @@ exports[`Balance it should render properly 1`] = `
         <label
           class="css-nwvdww"
         >
-          Aprovado
+          Em validação
         </label>
         <div
-          class="css-ybx47f"
+          class="css-1riio1c"
         >
-          R$ 72,00
-        </div>
-      </div>
-      <div
-        class="css-gi4i87"
-      >
-        <label
-          class="css-nwvdww"
-        >
-          Pendente
-        </label>
-        <div
-          class="css-ybx47f"
-        >
-          R$ 45,00
+          <span>
+            +
+          </span>
+          R$ 0,00
         </div>
       </div>
     </div>

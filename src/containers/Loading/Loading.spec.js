@@ -4,9 +4,7 @@ import Loading from './Loading';
 
 describe('Loading', () => {
   it('it should render properly', () => {
-    const { container } = render(
-      <Loading />
-    );
+    const { container } = render(<Loading />);
     expect(container).toMatchSnapshot();
   });
 });

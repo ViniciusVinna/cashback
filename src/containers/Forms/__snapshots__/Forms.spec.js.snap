@@ -3,7 +3,7 @@
 exports[`Forms LoginForm should render properly 1`] = `
 <div>
   <form
-    class="css-1ywmfgl"
+    class="css-nda95f"
     data-testid="login-form"
   >
     <label
@@ -37,6 +37,7 @@ exports[`Forms LoginForm should render properly 1`] = `
         class="css-1gdjj4x"
         name="email"
         placeholder="digite seu email..."
+        value=""
       />
     </div>
     <label
@@ -76,6 +77,7 @@ exports[`Forms LoginForm should render properly 1`] = `
         name="password"
         placeholder="digite sua senha..."
         type="password"
+        value=""
       />
     </div>
     <button
@@ -96,9 +98,22 @@ exports[`Forms LoginForm should render properly 1`] = `
 exports[`Forms PurchaseForm should render properly 1`] = `
 <div>
   <form
-    class="css-105uino"
+    class="css-3r8ze0"
     data-testid="purchase-form"
   >
+    <label
+      class="css-13tv2p4"
+      for="value"
+    >
+      Valor
+    </label>
+    <input
+      class="css-vufj4s"
+      name="value"
+      placeholder="00,00"
+      type="tel"
+      value="R$ 0,00"
+    />
     <label
       class="css-13tv2p4"
       for="code"
@@ -134,43 +149,6 @@ exports[`Forms PurchaseForm should render properly 1`] = `
         name="code"
         placeholder="000000000000"
         type="text"
-      />
-    </div>
-    <label
-      class="css-13tv2p4"
-      for="value"
-    >
-      Valor
-    </label>
-    <div
-      class="css-bhvw3g"
-    >
-      <svg
-        fill="none"
-        height="1em"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <line
-          x1="12"
-          x2="12"
-          y1="1"
-          y2="23"
-        />
-        <path
-          d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-        />
-      </svg>
-      <input
-        class="css-1gdjj4x"
-        name="value"
-        placeholder="R$ 00,00"
-        type="tel"
       />
     </div>
     <label

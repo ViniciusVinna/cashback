@@ -58,7 +58,6 @@ export default {
     justify-content: center;
     width: 100%;
     min-width: ${theme.breakpoint.xxs};
-    max-width: calc(${theme.breakpoint.l} / 2);
 
     @media (min-width: ${theme.breakpoint.xl}) {
       max-width: calc(${theme.breakpoint.xl} / 2);

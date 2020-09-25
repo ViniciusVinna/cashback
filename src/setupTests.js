@@ -4,6 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import 'babel-polyfill';
 import 'jest-extended';
 import 'jest-localstorage-mock';
+import 'jest-canvas-mock';
 import mutationObserver from 'mutation-observer';
 import deepmerge from 'deepmerge';
 
@@ -23,10 +24,10 @@ import { createStore, combineReducers } from 'redux';
 import { light } from 'style/theme';
 import { renderHook, act as actHook } from '@testing-library/react-hooks';
 
-import reducers from 'reducers';
+import { reducers } from 'reducers';
 import packageJson from '../package.json';
 
-const rootReducer = combineReducers(reducers);
+const rootReducer = combineReducers({ ...reducers });
 
 export const WithProviders = ({
   children,
@@ -99,16 +100,17 @@ const setupRender = (ui, dataTestId) => {
 };
 
 global.Date.now = jest.fn(() => 1569873605000);
+global.MutationObserver = mutationObserver;
 global.act = act;
 global.actHook = actHook;
 global.cleanup = cleanup;
 global.create = create;
 global.fireEvent = fireEvent;
-global.MutationObserver = mutationObserver;
 global.render = renderWithProviders(renderTest);
 global.renderHook = renderHook;
 global.renderWithRedux = renderWithRedux;
 global.screen = screen;
+global.scrollTo = jest.fn();
 global.setupRender = setupRender;
 global.wait = wait;
 global.waitFor = waitFor;
@@ -117,9 +119,42 @@ global.sagaReducer = (options = {}) => {
     app: {
       alerts: [],
       environment: 'development',
-      screenSize: 'small',
+      isDialogOpen: false,
+      isDrawerOpen: false,
+      isLoading: false,
+      isScrollLocked: false,
+      screenSize: 'large',
       status: 'idle',
+      statusMessage: '',
       version: packageJson.version,
+    },
+    purchases: {
+      balance: 0,
+      validation: 0,
+      data: {},
+      details: {},
+      fetch: {
+        message: '',
+        status: 'idle',
+      },
+      create: {
+        message: '',
+        status: 'idle',
+      },
+    },
+    user: {
+      accessToken: '',
+      data: {},
+      create: {
+        data: {},
+        message: '',
+        status: 'idle',
+      },
+      fetch: {
+        message: '',
+        status: 'idle',
+      },
+      isLogged: false,
     },
   };
 

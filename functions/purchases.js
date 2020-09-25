@@ -5,9 +5,8 @@ exports.handler = async ({ queryStringParameters, httpMethod, body }) => {
   if (httpMethod === 'POST') {
     try {
       const purchase = parseCreatePurchase(body);
-
-
       const mockApiResponse = await client(endpoints.createPurchases, { payload: purchase, ...JSON.parse(body) });
+
       return {
         statusCode: 201,
         body: JSON.stringify(mockApiResponse),

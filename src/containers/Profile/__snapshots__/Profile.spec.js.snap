@@ -7,7 +7,7 @@ exports[`Profile it should render properly 1`] = `
     data-testid="profile"
   >
     <div
-      class="css-1g47b3l"
+      class="css-5o0brw"
     >
       <div
         class="css-1mcyu8t"
@@ -25,16 +25,14 @@ exports[`Profile it should render properly 1`] = `
     >
       <h6
         class="css-1b7lpw4"
-      >
-        Vinícius Ribeiro
-      </h6>
+      />
     </div>
     <figure
-      class="css-q5erda"
+      class="css-yn18kw"
     >
       <img
         alt="Imagem de perfil"
-        src="avatar-1.svg"
+        src="avatar-2.svg"
       />
     </figure>
   </div>

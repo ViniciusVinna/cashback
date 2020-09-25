@@ -1,0 +1,159 @@
+{
+  "balance": 40536,
+  "validation": 8000,
+  "data": {
+    "2020-09-26T00:00:00.000Z": [
+      {
+        "id": "11",
+        "userId": "1",
+        "code": "123131231",
+        "value": "12312",
+        "date": "2020-09-26T00:00:00.000Z",
+        "status": "APPROVED",
+        "cashback": "36936",
+        "percentage": "3.00%"
+      }
+    ],
+    "2020-09-21T00:00:00.000Z": [
+      {
+        "id": "10",
+        "userId": "1",
+        "code": "123123123",
+        "value": "3400",
+        "date": "2020-09-21T00:00:00.000Z",
+        "status": "DISAPPROVED",
+        "cashback": "0",
+        "percentage": "0.00%"
+      }
+    ],
+    "2020-09-14T00:00:00.000Z": [
+      {
+        "id": "5",
+        "userId": "1",
+        "code": "09876543",
+        "value": "45000",
+        "date": "2020-09-14T00:00:00.000Z",
+        "status": "APPROVED",
+        "cashback": "2250",
+        "percentage": "5.00%"
+      }
+    ],
+    "2020-09-12T00:00:00.000Z": [
+      {
+        "id": "7",
+        "userId": "1",
+        "code": "0987654",
+        "value": "4500",
+        "date": "2020-09-12T00:00:00.000Z",
+        "status": "DISAPPROVED",
+        "cashback": "0",
+        "percentage": "0.00%"
+      },
+      {
+        "id": "8",
+        "userId": "1",
+        "code": "123213",
+        "value": "3800",
+        "date": "2020-09-12T00:00:00.000Z",
+        "status": "DISAPPROVED",
+        "cashback": "0",
+        "percentage": "0.00%"
+      }
+    ],
+    "2020-09-10T00:00:00.000Z": [
+      {
+        "id": "2",
+        "userId": "1",
+        "code": "123456789",
+        "value": "15000",
+        "date": "2020-09-10T00:00:00.000Z",
+        "status": "APPROVED",
+        "cashback": "450",
+        "percentage": "3.00%"
+      },
+      {
+        "id": "3",
+        "userId": "1",
+        "code": "123456789",
+        "value": "15000",
+        "date": "2020-09-10T00:00:00.000Z",
+        "status": "APPROVED",
+        "cashback": "450",
+        "percentage": "3.00%"
+      },
+      {
+        "id": "4",
+        "userId": "1",
+        "code": "123456789",
+        "value": "15000",
+        "date": "2020-09-10T00:00:00.000Z",
+        "status": "APPROVED",
+        "cashback": "450",
+        "percentage": "3.00%"
+      },
+      {
+        "id": "12",
+        "userId": "1",
+        "code": "123123",
+        "value": "3200",
+        "date": "2020-09-10T00:00:00.000Z",
+        "status": "DISAPPROVED",
+        "cashback": "0",
+        "percentage": "0.00%"
+      }
+    ],
+    "2020-09-06T00:00:00.000Z": [
+      {
+        "id": "6",
+        "userId": "1",
+        "code": "123434343",
+        "value": "3000",
+        "date": "2020-09-06T00:00:00.000Z",
+        "status": "DISAPPROVED",
+        "cashback": "0",
+        "percentage": "0.00%"
+      }
+    ],
+    "2020-09-01T00:00:00.000Z": [
+      {
+        "id": "1",
+        "userId": "1",
+        "code": "0987654321",
+        "value": "100000",
+        "date": "2020-09-01T00:00:00.000Z",
+        "status": "VALIDATING",
+        "cashback": "8000",
+        "percentage": "8.00%"
+      },
+      {
+        "id": "9",
+        "userId": "1",
+        "code": "09876",
+        "value": "2800",
+        "date": "2020-09-01T00:00:00.000Z",
+        "status": "DISAPPROVED",
+        "cashback": "0",
+        "percentage": "0.00%"
+      },
+      {
+        "id": "13",
+        "userId": "1",
+        "code": "123456",
+        "value": "433",
+        "date": "2020-09-01T00:00:00.000Z",
+        "status": "DISAPPROVED",
+        "cashback": "0",
+        "percentage": "0.00%"
+      }
+    ]
+  },
+  "details": {},
+  "fetch": {
+    "message": "",
+    "status": "success"
+  },
+  "create": {
+    "message": "",
+    "status": "idle"
+  }
+}
