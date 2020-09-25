@@ -3,11 +3,11 @@
 exports[`Toast Component it should render properly 1`] = `
 <div>
   <div
-    class="css-mj4rha"
+    class="css-1cr6320"
     data-testid="toast"
   >
     <div
-      class="css-1kc6v58"
+      class="css-m7k8lo"
     >
       <div
         class="css-1obobd9"

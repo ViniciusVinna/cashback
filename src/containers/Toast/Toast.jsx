@@ -15,20 +15,18 @@ const WrappedToastContainer = ({ ...props }) => {
   const dispatch = useDispatch();
   const handleClose = useCallback(id => dispatch(hideAlert(id)), [dispatch]);
 
-  const notify = useCallback((alert) => (
-    toast[alert.status](alert.message, {
-      onClose: () => handleClose(alert.id),
-      position: toast.POSITION[alert.position],
-      autoClose: alert.timeout || 3000,
-    })
-  ), [handleClose]);
-
   useEffect(() => {
     /* istanbul ignore else */
     if (alerts.length > 0) {
-      alerts.map(alert => notify(alert));
+      alerts.map(alert => toast[alert.status](
+        alert.message, {
+          onClose: () => handleClose(alert.id),
+          position: toast.POSITION[alert.position],
+          autoClose: alert.timeout || 3000,
+        })
+      );
     }
-  }, [alerts, notify]);
+  }, [alerts, handleClose]);
 
   return (
     <Container data-testid="toast">

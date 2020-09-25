@@ -64,6 +64,12 @@ const semanticColors = {
   warning: oranges.o500,
 };
 
+const statusColors = {
+  DISAPPROVED: reds.r500,
+  APPROVED: greens.g500,
+  VALIDATING: oranges.o100,
+};
+
 const applicationColors = {
   bgLoading: 'rgba(255, 255, 255, 0.8)',
   bodyBg: neutrals.n200,
@@ -72,7 +78,7 @@ const applicationColors = {
   brandSecondary: '#CF887E',
   primary: blues.b500,
   secondary: greens.g400,
-  shadow: 'rgba(12, 15, 20, 0.5)',
+  shadow: 'rgba(12, 15, 20, 0.1)',
 };
 
 /**
@@ -147,7 +153,6 @@ const zIndex = {
   mask: '200',
   sticky: '300',
   header: '400',
-  toast: '500',
   dropdown: '600',
   overlay: '700',
   drawer: '800',
@@ -156,6 +161,7 @@ const zIndex = {
   loading: '1100',
   popup: '1200',
   tooltip: '1300',
+  toast: '1400',
 };
 
 /**
@@ -256,6 +262,7 @@ const light = {
   color: {
     ...applicationColors,
     ...black,
+    ...statusColors,
     ...blues,
     ...darkColors,
     ...greens,

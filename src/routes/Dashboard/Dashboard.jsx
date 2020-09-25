@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { getPurchases } from 'actions';
+import { getPurchases, toggleDialog } from 'actions';
 
 import Waves from 'components/Waves';
 
@@ -14,8 +14,6 @@ import Transactions from 'containers/Transactions';
 import Details from 'containers/Transactions/Details';
 import { PurchaseForm } from 'containers/Forms';
 
-import { useDialog } from 'hooks';
-
 import SignInStyled from './Dashboard.styled';
 
 const {
@@ -26,10 +24,13 @@ const {
 } = SignInStyled;
 
 const Dashboard = () => {
-  const [isDialogVisible, setDialogVisibility, toggleDialog] = useDialog(false);
   const [purchaseHeight, setPurchaseHeight] = useState('0px');
   const addPurchaseRef = useRef(null);
   const dispatch = useDispatch();
+
+  const handleClick = useCallback(() => {
+    dispatch(toggleDialog(true));
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getPurchases());
@@ -64,12 +65,10 @@ const Dashboard = () => {
       </Content>
 
       <Dialog
-        isVisible={isDialogVisible}
-        onCloseHandler={() => setDialogVisibility(false)}
         title="Cadastrar Compra"
         renderComponent={(
           <AddPurchase
-            onClickHandler={toggleDialog}
+            onClickHandler={handleClick}
             ref={addPurchaseRef}
           />
         )}

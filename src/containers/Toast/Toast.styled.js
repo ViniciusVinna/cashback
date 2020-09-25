@@ -29,7 +29,7 @@ export const Container = styled('div')(({ theme }) => css`
       position: fixed;
       transform: translate3d(0, 0, 9999);
       width: 100%;
-      z-index: ${theme.zIndex.tooltip};
+      z-index: ${theme.zIndex.toast};
       
       &--top-center {
         left: 50%;
