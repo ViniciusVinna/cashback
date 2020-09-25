@@ -10,7 +10,7 @@ export function* jwtSignin({ email, password }) {
     ));
   }
   catch (err) {
-    throw new Error(err);
+    throw new Error('Este email já está cadastrado.');
   }
 }
 
@@ -26,6 +26,6 @@ export function* jwtLogin({ email, password }) {
     return accessToken;
   }
   catch (err) {
-    throw new Error(err);
+    throw new Error('Verifique seu e-mail e sua senha. Se ainda não possui uma conta, clique no botão criar cadastro.');
   }
 }

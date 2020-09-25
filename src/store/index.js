@@ -17,6 +17,7 @@ const sagaMiddleware = createSagaMiddleware();
 const persistConfig = {
   key: 'cashback',
   storage,
+  blacklist: ['purchases'],
   stateReconciler: autoMergeLevel2,
 };
 

@@ -4,7 +4,7 @@
  */
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 
-import { showAlert } from 'actions';
+import { getPurchases, showAlert } from 'actions';
 
 import {
   client,
@@ -30,6 +30,13 @@ export function* purchasesCreate({ payload }) {
       type: PurchasesConstants.PURCHASES_CREATE_SUCCESS,
       payload: { ...JSON.parse(data) },
     });
+
+    yield put(showAlert(
+      `A compra ${payload.code} foi cadastrada com sucesso.`,
+      { status: STATUS.SUCCESS }
+    ));
+
+    yield put(getPurchases());
   }
   catch ({ message, status }) {
     yield put({
@@ -37,7 +44,10 @@ export function* purchasesCreate({ payload }) {
       payload: { message: parseResponseError(message, status), status },
     });
 
-    yield put(showAlert(message, { status: STATUS.ERROR }));
+    yield put(showAlert(
+      'Parece que tivemos um problema no servidor. Tente novamente.',
+      { status: STATUS.ERROR }
+    ));
   }
 }
 
@@ -58,7 +68,10 @@ export function* purchasesGet() {
       payload: { message: parseResponseError(message, status), status },
     });
 
-    yield put(showAlert(message, { status: STATUS.ERROR }));
+    yield put(showAlert(
+      'Parece que tivemos um problema no servidor. Tente novamente.',
+      { status: STATUS.ERROR }
+    ));
   }
 }
 
