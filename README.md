@@ -21,13 +21,28 @@ npm install -g netlify-cli@2.63.3
 > 3) No diretório do projeto execute o comando `netlify dev` para subir a aplicação, o `identity` (serviço de autenticação em JWT) e as `lambda-functions` onde estão contidas as regras de negócio da aplicação, regras de `proxy` e `parsing` e `sanitização dos dados` para a mock api.
 > Na conclusão do processo o projeto estará disponível em `http://localhost:8888/`
 
+#### Rodando os testes
+> Testes:
+```bash
+yarn test
+```
+> 
+> Coverage:
+```bash
+yarn test:coverage
+```
+> Abrir relatório de cobertura de testes:
+```bash
+open coverage/lcov-report/index.html
+```
+
 ## Principais tecnologias utilizadas
-[x] React
-[x] React Hooks
-[x] Redux
-[x] Redux-Sagas
-[x] React-testing-library
-[x] Emotion CSS (Styled Components)
+- [x] React
+- [x] React Hooks
+- [x] Redux
+- [x] Redux-Sagas
+- [x] React-testing-library
+- [x] Emotion CSS (Styled Components)
 
 ## Regras de negócio
 
