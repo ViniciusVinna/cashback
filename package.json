@@ -15,6 +15,7 @@
     "dayjs": "^1.8.35",
     "emotion-normalize": "^10.1.0",
     "emotion-theming": "^10.0.27",
+    "encoding": "^0.1.13",
     "gotrue-js": "^0.9.27",
     "history": "4.10.1",
     "immer": "^7.0.9",
@@ -80,6 +81,7 @@
     "jest-serializer-html": "^7.0.0",
     "lint-staged": "^10.4.0",
     "mutation-observer": "^1.0.3",
+    "netlify-lambda": "^2.0.1",
     "prettier": "^2.1.2",
     "react-test-renderer": "^16.13.1",
     "redux-immutable-state-invariant": "^2.1.0",
@@ -89,6 +91,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
+    "build:functions": "netlify-lambda build functions-src",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js --ext .jsx src",
     "lint:fix": "yarn lint --fix",

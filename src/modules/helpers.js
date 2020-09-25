@@ -30,3 +30,13 @@ export const parseErrorObject = (data) => {
 
   return output;
 };
+
+export const getEnvURL = () => {
+  const { NODE_ENV } = process.env;
+  
+  if (NODE_ENV !== 'development') {
+    return 'https://cashback-boticario.netlify.app';
+  }
+
+  return window.location.origin;
+};

@@ -3,3 +3,4 @@
 [![Build Status](https://travis-ci.org/ViniciusVinna/cashback.svg?branch=master)](https://travis-ci.org/ViniciusVinna/cashback)
 [![codecov](https://codecov.io/gh/ViniciusVinna/cashback/branch/master/graph/badge.svg)](https://codecov.io/gh/ViniciusVinna/cashback)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c06c55e767c340053218/maintainability)](https://codeclimate.com/github/ViniciusVinna/cashback/maintainability)
+
