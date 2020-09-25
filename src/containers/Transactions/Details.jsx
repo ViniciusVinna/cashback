@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { detailsParser } from 'modules';
+
 import { MESSAGES } from './constants';
 
 import Icon from './Icons';
@@ -16,10 +18,11 @@ const {
 
 const Details = () => {
   const { details } = useSelector(state => state.purchases);
+  const parsedDetails = detailsParser(details);
 
   return (
     <DetailsWrapper data-testid="details">
-      {Object.keys(details).map(property => (
+      {Object.keys(parsedDetails).map(property => (
         <Detail key={property}>
           <Label>
             <Icon name={property} />
@@ -27,7 +30,7 @@ const Details = () => {
           </Label>
 
           <DetailValue>
-            {details[property]}
+            {parsedDetails[property]}
           </DetailValue>
         </Detail>
       ))}

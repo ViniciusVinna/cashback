@@ -14,3 +14,9 @@ export const STATUS = {
   SUCCESS: 'success',
   UPDATE: 'update',
 };
+
+export const CASHBACK_STATUS = {
+  APPROVED: 'aprovado',
+  DISAPPROVED: 'reprovado',
+  VALIDATING: 'em validação',
+};

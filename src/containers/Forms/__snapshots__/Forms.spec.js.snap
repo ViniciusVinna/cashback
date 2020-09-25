@@ -246,7 +246,7 @@ exports[`Forms PurchaseForm should render properly 1`] = `
 exports[`Forms SigninForm should render properly 1`] = `
 <div>
   <form
-    class="css-3mxqed"
+    class="css-3r8ze0"
   >
     <label
       class="css-13tv2p4"
