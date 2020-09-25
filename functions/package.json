@@ -1,0 +1,18 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "purchases.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "string-format": "^2.0.0",
+    "dayjs": "^1.8.35",
+    "is-lite": "^0.7.0",
+    "node-fetch": "^2.6.1",
+    "qs": "^6.9.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
