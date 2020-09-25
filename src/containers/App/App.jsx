@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 import { ThemeProvider } from 'emotion-theming';
 
+import { useWindowSize } from 'hooks';
+
 import { initAuthClient } from 'modules';
 
 import Routes from 'routes';
@@ -16,6 +18,8 @@ import GlobalStyles from './App.styled';
 
 const App = () => {
   const { pathname } = useLocation();
+
+  useWindowSize();
 
   useEffect(() => {
     window.scrollTo(0, 0);

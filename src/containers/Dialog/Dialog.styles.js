@@ -31,7 +31,7 @@ export const DialogStyled = {
     bottom: 0;
     height: 100%;
     left: 0;
-    opacity: 0.3;
+    opacity: 0.4;
     overflow: hidden;
     position: fixed;
     right: 0;
@@ -69,8 +69,14 @@ export const DialogStyled = {
     top: 50%;
     transform: translate(-50%, -50%);
     width: calc(100% - ${theme.space.xxxl});
+    max-width: calc(${theme.breakpoint.l} /2);
     will-change: transform;
     z-index: ${theme.zIndex.modal};
+
+    & > svg {
+      width: 100%;
+      max-height: 100px;
+    }
 
     @keyframes transformAnimation {
       0%   { 

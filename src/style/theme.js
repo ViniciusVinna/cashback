@@ -101,6 +101,22 @@ const spacings = {
 
 /**
  * ===============================
+ * Space tokens
+ * ===============================
+ */
+
+const breakpoints = {
+  xxs: '320px',
+  xs: '375px',
+  s: '414px',
+  m: '768px',
+  l: '1024px',
+  xl: '1280px',
+  xxl: '1440px',
+};
+
+/**
+ * ===============================
  * Icon size tokens
  * ===============================
 */
@@ -272,6 +288,7 @@ const light = {
     ...semanticColors,
   },
   blur: { ...blur },
+  breakpoint: { ...breakpoints },
   font: { ...font },
   fontWeight: { ...fontWeight },
   iconSize: { ...iconSizes },

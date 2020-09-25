@@ -34,8 +34,8 @@ const Drawer = ({ children, extraPadding, title }) => {
             <BackIcon data-testid="close-drawer" onClick={handleClose} />
             <Heading level="h4">{title}</Heading>
           </HeaderContainer>
-          <Waves />
         </Header>
+        <Waves />
 
         <Content extraPadding={extraPadding}>
           {children}

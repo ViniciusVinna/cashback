@@ -16,6 +16,7 @@ export const DrawerStyled = {
     display: flex;
     flex-direction: column;
     height: 100%;
+    max-width: ${theme.breakpoint.l};
     overflow: auto;
     position: fixed;
     right: 0;
@@ -23,14 +24,27 @@ export const DrawerStyled = {
     transform: ${isOpen ? 'translateX(0)' : 'translateX(100%)'};
     transition: ${theme.transition.bezier};
     width: 100%;
+    max-width: calc(${theme.breakpoint.l} / 2);
     z-index: ${theme.zIndex.drawer};
+
+    @media (min-width: ${theme.breakpoint.xl}) {
+      max-width: calc(${theme.breakpoint.xl} / 2);
+    }
+
+    @media (min-width: ${theme.breakpoint.xxl}) {
+      max-width: calc(${theme.breakpoint.xxl} / 2);
+    }
   `),
-  Header: styled('header')(({ theme }) => css`
+  Header: styled('header')`
     top: 0;
     width: 100%;
-    margin-bottom: -${theme.space.xl};
-  `),
-  HeaderContainer: styled('header')(({ theme }) => css`
+
+    & > svg {
+      width: 100%;
+      max-height: 100px;
+    }
+  `,
+  HeaderContainer: styled('div')(({ theme }) => css`
     align-items: center;
     background-color: ${theme.color.g500};
     display: flex;
@@ -49,8 +63,15 @@ export const DrawerStyled = {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin: auto;
     padding: ${theme.space.xs} ${extraPadding ? theme.space.xl : theme.space.m} ${theme.space.m};
     width: 100%;
+    min-width: ${theme.breakpoint.xxs};
+    max-width: ${theme.breakpoint.s};
+
+    @media (min-width: ${theme.breakpoint.l}) {
+      max-width: calc(${theme.breakpoint.l} / 2);
+    }
 
     & p {
       font-size: ${theme.textSize.m};
@@ -60,7 +81,7 @@ export const DrawerStyled = {
   `),
   Overlay: styled('div')(({ theme, isOpen }) => css`
     backface-visibility: hidden;
-    background-color: ${theme.color.shadow};
+    background-color: ${theme.color.black};
     bottom: 0;
     left: 0;
     opacity: ${isOpen ? 0.4 : 0};

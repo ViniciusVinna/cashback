@@ -9,19 +9,61 @@ export default {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+
+    @media (min-width: ${theme.breakpoint.l}) {
+      flex-direction: row;
+    }
+  `),
+  WelcomeImage: styled('div')(({ theme, image }) => css`
+    align-items: center;
+    background-color: ${theme.color.n100};
+    background-image: url('${image}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    padding: ${theme.space.xxxl};
+    flex: 1;
+    justify-content: center;
+    min-height: 100%;
+    position: relative;
+
+    & > div {
+      position: relative;
+      width: 100%;
+      max-width: ${theme.breakpoint.s};
+      z-index: ${theme.zIndex.masked};
+    }
+    
+    :after {
+      background-color: ${theme.color.black};
+      content: '';
+      height: 100%;
+      opacity: 0.2;
+      position: absolute;
+      width: 100%;
+      z-index: ${theme.zIndex.default};
+    }
   `),
   Content: styled('div')(({ theme }) => css`
     padding: 0 ${theme.space.xxl};
     width: 100%;
+    max-width: ${theme.breakpoint.s}
   `),
-  ContentGroup: styled('div')`
+  ContentGroup: styled('div')(({ theme }) => css`
     align-items: center;
     display: flex;
     flex-direction: column;
     flex: 1;
+    height: 100%;
     justify-content: center;
     width: 100%;
-  `,
+    min-width: ${theme.breakpoint.xxs};
+    max-width: calc(${theme.breakpoint.l} / 2);
+
+    @media (min-width: ${theme.breakpoint.xl}) {
+      max-width: calc(${theme.breakpoint.xl} / 2);
+    }
+  `),
   Copyright: styled('div')(({ theme }) => css`
     color: ${theme.color.d500};
     font-size: ${theme.textSize.s};
