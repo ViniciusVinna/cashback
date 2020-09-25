@@ -22,20 +22,18 @@ const Balance = () => {
   return (
     <BalanceWidget data-testid="balance">
       <Header>
-        <Title>Saldo</Title>
+        <Title>Saldo disponível</Title>
         <Value>{formatCurrency(balance)}</Value>
       </Header>
 
       <Info>
         <Item>
           <Label>Em validação</Label>
-          <ItemValue>{formatCurrency(validation)}</ItemValue>
+          <ItemValue>
+            <span>+</span>
+            {formatCurrency(validation)}
+          </ItemValue>
         </Item>
-
-        {/* <Item>
-          <Label>Pendente</Label>
-          <ItemValue>validation</ItemValue>
-        </Item> */}
       </Info>
     </BalanceWidget>
   );

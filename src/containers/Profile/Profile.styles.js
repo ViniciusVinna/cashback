@@ -14,10 +14,13 @@ export const ProfileStyled = {
     }
   `),
   ProfileBrand: styled('div')(({ theme }) => css`
-    height: ${theme.iconSize.xl};
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: ${theme.iconSize.l};
     margin: 0;
     overflow: hidden;
-    width: ${theme.iconSize.xl};
+    width: ${theme.iconSize.l};
 
     & > div {
       height: ${theme.iconSize.xl};

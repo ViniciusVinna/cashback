@@ -3,7 +3,8 @@ import { css } from '@emotion/core';
 
 export const BalanceStyled = {
   BalanceWidget: styled('div')(({ theme }) => css`
-    background-color: ${theme.color.n100};
+    background: ${theme.color.n100};
+    background: linear-gradient(180deg, ${theme.color.n100} 0%, ${theme.color.n300} 100%);
     border-radius: ${theme.borderRadius.m};
     box-shadow: ${theme.boxShadow.modal};
     display: flex;
@@ -34,7 +35,7 @@ export const BalanceStyled = {
   `),
   ItemValue: styled('div')(({ theme }) => css`
     font-size: ${theme.textSize.l};
-    color: ${theme.color.o500};
+    color: ${theme.color.o200};
     display: flex;
     width: 100%;
   `),
