@@ -6,7 +6,7 @@ import { STATUS, PurchasesConstants } from 'constants/index';
 const purchasesState = {
   balance: 0,
   validation: 0,
-  data: [],
+  data: {},
   details: {},
   fetch: {
     message: '',
@@ -27,10 +27,10 @@ export default {
       };
     }),
     [PurchasesConstants.PURCHASES_FETCH_SUCCESS]: (state, { payload }) => produce(state, draft => {
-      const { balance, purchases, validation } = payload;
+      const { balance, data, validation } = payload;
 
       draft.balance = balance;
-      draft.data = purchases;
+      draft.data = data;
       draft.fetch.status = STATUS.SUCCESS;
       draft.validation = validation;
     }),
@@ -55,7 +55,10 @@ export default {
       };
     }),
     [PurchasesConstants.SET_DETAILS]: (state, { payload: { id } }) => produce(state, draft => {
-      draft.details = state.data.find(detail => detail.id === id);
+      const { data } = state;
+      const selectedDetail = Object.values(data).flatMap(detail => detail).find(detail => detail.id === id) || {};
+
+      draft.details = selectedDetail;
     }),
   }, purchasesState),
 };
