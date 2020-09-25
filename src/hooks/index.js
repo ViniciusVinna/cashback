@@ -1,2 +1,2 @@
-export * from './useDialog';
+export * from './useWindowSize';
 export * from './usePortal';

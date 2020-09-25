@@ -1,5 +1,6 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import ReactVivus from 'react-vivus';
 
 import { toggleDrawer } from 'actions';
 
@@ -11,6 +12,9 @@ import Waves from 'components/Waves';
 import Drawer from 'containers/Drawer';
 import { LoginForm, SigninForm } from 'containers/Forms';
 
+import backgroundImage from 'assets/images/bg-image.jpg';
+import logoImage from 'assets/brands/boticario-dark.svg';
+
 import LoginStyled from './Login.styled';
 
 const {
@@ -20,9 +24,11 @@ const {
   Copyright,
   Header,
   HeaderWrapper,
+  WelcomeImage,
 } = LoginStyled;
 
 const Login = () => {
+  const { screenSize } = useSelector(state => state.app);
   const dispatch = useDispatch();
 
   const handleOpenDrawer = () => {
@@ -31,6 +37,21 @@ const Login = () => {
 
   return (
     <LoginPage data-testid="signin">
+      {screenSize.includes('large') && (
+        <WelcomeImage image={backgroundImage}>
+          <ReactVivus
+            id="brand"
+            option={{
+              file: logoImage,
+              type: 'scenario',
+              animTimingFunction: 'EASE',
+              duration: 200,
+            }}
+            style={{ height: 'auto', width: '100%' }}
+          />
+        </WelcomeImage>
+      )}
+
       <ContentGroup>
         <Header>
           <HeaderWrapper>
