@@ -21,7 +21,7 @@ const parseUserResponse = (data, { token = '' }) => {
     accessToken: token || '',
     cpf: user.cpf || '',
     email: user.email || '',
-    firstname: user?.username?.split(' ')[0] || '',
+    firstname: user.username.split(' ')[0] || '',
     username: user.username || '',
   });
 };
