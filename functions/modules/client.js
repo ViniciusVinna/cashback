@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const axios = require('axios');
 const qs =  require('qs');
 const { baseURL } = require('./config');
 const { parseErrorObject } = require('./helpers');
@@ -120,19 +120,19 @@ const request = (action) => {
   };
 
   const params = {
-    body: undefined,
+    data: undefined,
     headers,
     method: action.method || 'GET',
   };
 
   if (action.payload && type === 'JSON') {
-    params.body = action.payload;
+    params.data = action.payload;
   }
   else if (params.method !== 'GET' && action.payload) {
-    params.body = qs.stringify(action.payload);
+    params.data = qs.stringify(action.payload);
   }
 
-  return fetch(url, params)
+  return axios({ url, ...params })
     .then(async (response) => {
       if (response.status > 299) {
         const data = await response.json();
@@ -146,13 +146,13 @@ const request = (action) => {
         throw error;
       }
 
-      const contentType = response.headers.get('content-type');
+      const contentType = response.headers['content-type'];
 
       if (contentType && contentType.includes('application/json')) {
-        return response.json();
+        return JSON.parse(JSON.stringify(response.data));
       }
 
-      return response.text();
+      return JSON.stringify(response.data);
     });
 };
 

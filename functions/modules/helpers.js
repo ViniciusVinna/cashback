@@ -1,6 +1,8 @@
 const is =  require('is-lite');
 const dayjs = require('dayjs');
 
+console.log({ is, dayjs });
+
 /**
  * Strips all non-digit characters of the given string
  * @param {string} value
