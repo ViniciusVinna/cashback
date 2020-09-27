@@ -1,4 +1,4 @@
-import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
 import createSagaMiddleware from 'redux-saga';
 import storage from 'redux-persist/lib/storage';
 import { applyMiddleware, compose, createStore } from 'redux';
@@ -17,8 +17,8 @@ const sagaMiddleware = createSagaMiddleware();
 const persistConfig = {
   key: 'cashback',
   storage,
-  whitelist: ['user'],
-  stateReconciler: autoMergeLevel2,
+  blacklist: ['app', 'purchases'],
+  stateReconciler: hardSet,
 };
 
 const reducer = persistReducer(
