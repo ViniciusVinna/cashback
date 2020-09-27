@@ -21,8 +21,6 @@ exports.handler = async ({ httpMethod, body }, { clientContext }) => {
   if (httpMethod === 'GET') {
     try {
       const { identity = {}, user } = clientContext;
-      console.log({ httpMethod, body, identity, user });
-
       const mockApiResponse = await client(endpoints.getUser, { ...user });
       const userProfile = parseUserResponse(mockApiResponse, identity);
 

@@ -31,13 +31,13 @@ const parseCreatePurchase = (body) => {
   const purchaseValue = parseInt(purchase.value, 10) / 100;
   const status = getCashbackStatus(purchaseValue);
   const percentage = getPercentageRule(purchaseValue, status);
-  const cashback = getCashbackValue(purchaseValue, percentage) * 100;
+  const cashback = getCashbackValue(purchaseValue, percentage);
 
   return JSON.stringify({
     value: purchase.value,
     code: purchase.code,
     date: new Date(purchase.date),
-    cashback: clearNumber(cashback),
+    cashback: clearNumber(cashback * 100),
     percentage: `${(percentage * 100).toFixed(2)}%`,
     status,
   });
