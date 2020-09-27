@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrivateRoute it should redirect to / 1`] = `<div />`;
+
+exports[`PrivateRoute it should redirect to Dashboard when user is logged and has an access token 1`] = `<div />`;

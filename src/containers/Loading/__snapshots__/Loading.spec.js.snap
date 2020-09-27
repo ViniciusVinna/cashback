@@ -1,3 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading it should render properly 1`] = `<div />`;
+exports[`Loading it should not render Loading 1`] = `<div />`;
+
+exports[`Loading it should render Loading when isLoading is defined 1`] = `
+<div>
+  <div
+    class="css-13pre4i"
+    data-testid="Loading"
+  >
+    <div
+      class=""
+      id="loading"
+      style="height: auto; width: 100%;"
+    />
+    <div
+      class="css-7hliuq"
+    >
+      Carregando dados
+    </div>
+  </div>
+</div>
+`;

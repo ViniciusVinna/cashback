@@ -86,7 +86,7 @@ export const SigninForm = () => {
       {!!errors.password && (<Error>{errors?.password?.message}</Error>)}
 
       <Button type="submit" variation="secondary">
-        Finalizar Cadastro
+        Criar Conta
       </Button>
     </Form>
   );

@@ -2061,7 +2061,9 @@ exports[`Transactions Transaction Detail it should render properly with all prop
       </div>
       <div
         class="css-1pnek1n"
-      />
+      >
+        123456
+      </div>
     </div>
     <div
       class="css-1azqruw"
@@ -2101,7 +2103,7 @@ exports[`Transactions Transaction Detail it should render properly with all prop
       <div
         class="css-1pnek1n"
       >
-        R$ NaN
+        R$ 4,33
       </div>
     </div>
     <div
@@ -2159,7 +2161,7 @@ exports[`Transactions Transaction Detail it should render properly with all prop
       <div
         class="css-1pnek1n"
       >
-        25/09/2020
+        31/08/2020
       </div>
     </div>
     <div
@@ -2207,7 +2209,9 @@ exports[`Transactions Transaction Detail it should render properly with all prop
       </div>
       <div
         class="css-1pnek1n"
-      />
+      >
+        reprovado
+      </div>
     </div>
     <div
       class="css-1azqruw"
@@ -2253,7 +2257,9 @@ exports[`Transactions Transaction Detail it should render properly with all prop
       </div>
       <div
         class="css-1pnek1n"
-      />
+      >
+        0.00%
+      </div>
     </div>
     <div
       class="css-1azqruw"
@@ -2289,7 +2295,9 @@ exports[`Transactions Transaction Detail it should render properly with all prop
       </div>
       <div
         class="css-1pnek1n"
-      />
+      >
+        R$ 0,00
+      </div>
     </div>
   </div>
 </div>

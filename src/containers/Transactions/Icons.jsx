@@ -31,17 +31,11 @@ const TRANSACTION_ICONS = {
   [DICTIONARY.VALUE]: FiDollarSign,
 };
 
-const TransactionIcon = ({ name }) => {
-  if (TRANSACTION_ICONS[name] && typeof TRANSACTION_ICONS[name] === 'function') {
-    return (
-      <DetailIcon name={name} data-testid="transaction-icon">
-        {TRANSACTION_ICONS[name]()}
-      </DetailIcon>
-    );
-  }
-
-  return null;
-};
+const TransactionIcon = ({ name }) => (
+  <DetailIcon name={name} data-testid="transaction-icon">
+    {TRANSACTION_ICONS[name]()}
+  </DetailIcon>
+);
 
 TransactionIcon.propTypes = {
   name: PropTypes.string.isRequired,

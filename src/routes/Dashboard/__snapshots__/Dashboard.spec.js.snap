@@ -336,7 +336,7 @@ exports[`Dashboard it should render properly 1`] = `
             <div
               class="css-1pnek1n"
             >
-              25/09/2020
+              26/09/2020
             </div>
           </div>
           <div
@@ -466,7 +466,9 @@ exports[`Dashboard it should render properly 1`] = `
             </div>
             <div
               class="css-1pnek1n"
-            />
+            >
+              R$ NaN
+            </div>
           </div>
         </div>
       </div>

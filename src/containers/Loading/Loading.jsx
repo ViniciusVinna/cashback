@@ -14,6 +14,7 @@ const Loading = () => {
   const loadingRef = useRef(null);
 
   useEffect(() => {
+    /* instanbul ignore else */
     if (isScrollLocked) {
       disableBodyScroll(loadingRef);
     }

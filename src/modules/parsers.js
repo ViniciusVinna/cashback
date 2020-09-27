@@ -9,5 +9,5 @@ export const detailsParser = (details) => ({
   date: getDate(details.date),
   status: CASHBACK_STATUS[details['status']],
   percentage: details.percentage,
-  cashback: details.cashback,
+  cashback: formatCurrency(details.cashback),
 });

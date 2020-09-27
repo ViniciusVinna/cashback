@@ -364,7 +364,7 @@ exports[`App it should render properly 1`] = `
             data-test-id="button"
             type="submit"
           >
-            Finalizar Cadastro
+            Criar Conta
             <canvas
               height="0"
               style="border-radius: inherit; height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
