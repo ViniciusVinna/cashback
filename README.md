@@ -6,9 +6,12 @@
 
 Cashback é um SPA desenvolvido em React como desafio do Grupo Boticário.
 
+👀 [https://cashback-boticario.netlify.app/](https://cashback-boticario.netlify.app/)
+
 ## Iniciando o projeto
 
 > A aplicação foi desenvolvida com o `create-react-app`, porém, como existe o fluxo de autenticação em `JWT` e consumo de `API` eu utilizei a solução da `Netlify` para executar a arquitetura do projeto.
+
 
 #### Instalando o Netlify CLI
 > 1) Para executar o projeto em ambiente local é necessário instalar o `netlify-cli`:
