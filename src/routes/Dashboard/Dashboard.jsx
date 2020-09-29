@@ -17,10 +17,11 @@ import { PurchaseForm } from 'containers/Forms';
 import SignInStyled from './Dashboard.styled';
 
 const {
-  DashboardPage,
   Content,
+  DashboardPage,
   Header,
   HeaderWrapper,
+  Info,
 } = SignInStyled;
 
 const Dashboard = () => {
@@ -74,6 +75,10 @@ const Dashboard = () => {
         )}
       >
         <PurchaseForm />
+        <Info>
+          <span role="img" aria-label="Atenção">👉</span>
+          Cashback disponível para compras acima de R$ 50,00.
+        </Info>
       </Dialog>
 
       <Drawer title="Detalhes da Compra">

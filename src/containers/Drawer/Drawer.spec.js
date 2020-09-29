@@ -20,19 +20,17 @@ describe('Drawer', () => {
     useSelector.mockImplementation(callback => callback(mockStore));
     jest.useFakeTimers();
   });
-  
+
   afterEach(() => {
     useSelector.mockClear();
   });
 
   it('it should render properly', () => {
-    const { container, debug } = render(
+    const { container } = render(
       <Drawer title="Drawer Closed">
         Child
       </Drawer>
     );
-
-    debug();
     expect(container).toMatchSnapshot();
   });
 

@@ -152,11 +152,11 @@ exports[`Dashboard it should render properly 1`] = `
       Cadastrar Compra
     </div>
     <div
-      class="css-1r115av"
+      class="css-tz14h"
       data-testid="drawer"
     >
       <header
-        class="css-1lir5aa"
+        class="css-k5577l"
       >
         <div
           class="css-16zn5ys"
@@ -336,7 +336,7 @@ exports[`Dashboard it should render properly 1`] = `
             <div
               class="css-1pnek1n"
             >
-              26/09/2020
+              29/09/2020
             </div>
           </div>
           <div
@@ -471,6 +471,45 @@ exports[`Dashboard it should render properly 1`] = `
             </div>
           </div>
         </div>
+        <ul
+          class="css-1x9daa0"
+        >
+          <li
+            class="css-zotes9"
+          >
+            <span>
+              3%
+            </span>
+             de cashback em compras acima de R$ 50,00.
+          </li>
+          <li
+            class="css-zotes9"
+          >
+            <span>
+              5%
+            </span>
+             de cashback em compras acima de R$ 250,00 até R$ 500,00.
+          </li>
+          <li
+            class="css-zotes9"
+          >
+            <span>
+              8%
+            </span>
+             de cashback em compras a partir de R$ 500,00.
+          </li>
+          <li
+            class="css-zotes9"
+          >
+            <span
+              aria-label="Atenção"
+              role="img"
+            >
+              👉
+            </span>
+            Compras acima de R$ 500,00 são validadas após 2 dias úteis.
+          </li>
+        </ul>
       </div>
     </div>
     <div

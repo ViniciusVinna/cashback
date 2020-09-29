@@ -28,17 +28,17 @@ const parseUserResponse = (data, { token = '' }) => {
 
 const parseCreatePurchase = (body) => {
   const purchase = JSON.parse(body);
-  const purchaseValue = parseInt(purchase.value, 10) / 100;
+  const purchaseValue = parseInt(purchase.value, 10);
   const status = getCashbackStatus(purchaseValue);
   const percentage = getPercentageRule(purchaseValue, status);
-  const cashback = getCashbackValue(purchaseValue, percentage);
+  const cashback = getCashbackValue(purchaseValue, percentage).toFixed(2);
 
   return JSON.stringify({
     value: purchase.value,
     code: purchase.code,
     date: new Date(purchase.date),
-    cashback: clearNumber(cashback * 100),
-    percentage: `${(percentage * 100).toFixed(2)}%`,
+    cashback: clearNumber(cashback),
+    percentage: `${clearNumber((percentage * 100))}%`,
     status,
   });
 };

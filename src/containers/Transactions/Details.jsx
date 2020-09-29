@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 
 import { detailsParser } from 'modules';
+
+import InfoBox from 'components/InfoBox';
 
 import { MESSAGES } from './constants';
 
@@ -21,20 +23,24 @@ const Details = () => {
   const parsedDetails = detailsParser(details);
 
   return (
-    <DetailsWrapper data-testid="details">
-      {Object.keys(parsedDetails).map(property => (
-        <Detail key={property}>
-          <Label>
-            <Icon name={property} />
-            {MESSAGES[property]}
-          </Label>
+    <Fragment>
+      <DetailsWrapper data-testid="details">
+        {Object.keys(parsedDetails).map(property => (
+          <Detail key={property}>
+            <Label>
+              <Icon name={property} />
+              {MESSAGES[property]}
+            </Label>
 
-          <DetailValue>
-            {parsedDetails[property]}
-          </DetailValue>
-        </Detail>
-      ))}
-    </DetailsWrapper>
+            <DetailValue>
+              {parsedDetails[property]}
+            </DetailValue>
+          </Detail>
+        ))}
+      </DetailsWrapper>
+
+      <InfoBox />
+    </Fragment>
   );
 };
 

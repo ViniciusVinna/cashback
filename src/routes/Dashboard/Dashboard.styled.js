@@ -29,6 +29,18 @@ export default {
     position: relative;
     width: 100%;
   `),
+  Info: styled('p')(({ theme }) => css`
+    color: ${theme.color.d500};
+    display: flex;
+    font-size: ${theme.textSize.xs};
+    justify-content: center;
+    line-height: ${theme.lineHeight.s};
+
+    & span {
+      font-size: ${theme.textSize.m};
+      margin-right: ${theme.space.s};
+    }
+  `),
   HeaderWrapper: styled('div')(({ theme }) => css`
     margin: auto;
     text-align: center;

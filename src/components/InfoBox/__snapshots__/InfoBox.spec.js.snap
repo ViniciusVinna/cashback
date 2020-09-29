@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoBox it should render properly 1`] = `
+<div>
+  <ul
+    class="css-1x9daa0"
+  >
+    <li
+      class="css-zotes9"
+    >
+      <span>
+        3%
+      </span>
+       de cashback em compras acima de R$ 50,00.
+    </li>
+    <li
+      class="css-zotes9"
+    >
+      <span>
+        5%
+      </span>
+       de cashback em compras acima de R$ 250,00 até R$ 500,00.
+    </li>
+    <li
+      class="css-zotes9"
+    >
+      <span>
+        8%
+      </span>
+       de cashback em compras a partir de R$ 500,00.
+    </li>
+    <li
+      class="css-zotes9"
+    >
+      <span
+        aria-label="Atenção"
+        role="img"
+      >
+        👉
+      </span>
+      Compras acima de R$ 500,00 são validadas após 2 dias úteis.
+    </li>
+  </ul>
+</div>
+`;

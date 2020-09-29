@@ -86,7 +86,7 @@ const Transactions = () => {
                     isActive={selectedId === id}
                     status={status}
                   >
-                    {CASHBACK_STATUS[status]}
+                    {`cashback ${CASHBACK_STATUS[status]}`}
                   </Status>
                 </Content>
 

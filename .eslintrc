@@ -160,7 +160,7 @@
 	"react/jsx-max-props-per-line": ["warn", { "maximum": 4 }],
 	"react/jsx-no-duplicate-props": "warn",
 	"react/jsx-no-target-blank": "off",
-	"react/jsx-one-expression-per-line": "warn",
+	"react/jsx-one-expression-per-line": "off",
 	"react/jsx-pascal-case": "error",
 	"react/jsx-props-no-spreading": "off",
 	"react/jsx-uses-react": "error",

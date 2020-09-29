@@ -6,7 +6,7 @@ import { LoginForm } from './LoginForm';
 import { PurchaseForm } from './PurchaseForm';
 import { SigninForm } from './SigninForm';
 
-let mockStore = {
+const mockStore = {
   app: {
     isLoading: false,
   },

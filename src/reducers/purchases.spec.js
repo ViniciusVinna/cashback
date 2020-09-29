@@ -35,7 +35,7 @@ describe('reducers/app', () => {
 
   describe('PURCHASES_FETCH_FAILURE', () => {
     it(`should handle ${PurchasesConstants.PURCHASES_FETCH_FAILURE}`, () => {
-      const state = reducers.purchases(undefined, { 
+      const state = reducers.purchases(undefined, {
         type: PurchasesConstants.PURCHASES_FETCH_FAILURE,
         payload: { message: 'Fail' },
       });

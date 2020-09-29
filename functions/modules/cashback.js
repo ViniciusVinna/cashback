@@ -9,29 +9,34 @@ const RULES = {
 const CASHBACK_STATUS = keymirror(RULES);
 
 const getCashbackStatus = (value) => {
-  if (value <= 50) {
+  const currencyValue = (value / 100);
+
+  if (currencyValue <= 50) {
     return CASHBACK_STATUS.DISAPPROVED;
   }
-  else if (value > 50 && value <= 500) {
+  else if (currencyValue > 50 && currencyValue <= 500) {
     return CASHBACK_STATUS.APPROVED;
   }
   return CASHBACK_STATUS.VALIDATING;
 };
 
 const getPercentageRule = (value, status) => {
+  const currencyValue = (value / 100);
+
   if (status === CASHBACK_STATUS.DISAPPROVED) {
     return 0;
   }
-  else if (value > 50 && value <= 250) {
+  else if (currencyValue > 50 && currencyValue <= 250) {
     return 0.03;
   }
-  else if (value > 250 && value <= 500) {
+  else if (currencyValue > 250 && currencyValue <= 500) {
     return 0.05;
   }
+
   return 0.08;
 };
 
-const getCashbackValue = (value, percentage) => value * percentage;
+const getCashbackValue = (value, percentage) => (value / 100) * percentage;
 
 const getCashbackBalance = (purchases) => purchases.reduce((acc, { status, cashback }) => {
   if (status === CASHBACK_STATUS.APPROVED) {

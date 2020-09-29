@@ -34,15 +34,16 @@ export const DrawerStyled = {
     @media (min-width: ${theme.breakpoint.xxl}) {
       max-width: calc(${theme.breakpoint.xxl} / 2);
     }
+
+    & > svg {
+      width: 100%;
+      min-height: 25px;
+      max-height: 100px;
+    }
   `),
   Header: styled('header')`
     top: 0;
     width: 100%;
-
-    & > svg {
-      width: 100%;
-      max-height: 100px;
-    }
   `,
   HeaderContainer: styled('div')(({ theme }) => css`
     align-items: center;
